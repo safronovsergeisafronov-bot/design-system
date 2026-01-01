@@ -39,6 +39,35 @@ npm run build
 npm start
 ```
 
+## Deployment
+
+### Deploy to GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages:
+
+1. **Enable GitHub Pages** in your repository:
+   - Go to repository Settings → Pages
+   - Under "Source", select "GitHub Actions"
+
+2. **Push to main branch**:
+   ```bash
+   git push origin main
+   ```
+
+3. **Access your site**:
+   - Your style guide will be available at: `https://[username].github.io/design-system/styleguide`
+
+The GitHub Actions workflow (`.github/workflows/deploy.yml`) will automatically build and deploy on every push to main.
+
+### Deploy to Vercel (Recommended)
+
+For the best Next.js experience with server-side features:
+
+1. Visit [vercel.com](https://vercel.com)
+2. Import your GitHub repository
+3. Vercel will auto-detect Next.js and deploy
+4. Access at: `https://your-project.vercel.app/styleguide`
+
 ## Design Tokens
 
 All design tokens are defined in `/styles/design-tokens.ts` and include:
