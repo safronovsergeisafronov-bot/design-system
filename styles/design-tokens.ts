@@ -52,8 +52,8 @@ export const colors = {
     600: '#767676',
     700: '#5a5a5a',
     800: '#444444',
-    900: '#2c2c2c',
-    950: '#1e1e1e',
+    900: '#111111',  // Main text color
+    950: '#000000',
   },
 
   // Semantic Colors
@@ -121,10 +121,11 @@ export const colors = {
 
 export const typography = {
   fontFamily: {
-    sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+    sans: ['SF UI Display', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+    secondary: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
     serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
     mono: ['Roboto Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
-    display: ['Inter', 'system-ui', 'sans-serif'],
+    display: ['SF UI Display', '-apple-system', 'system-ui', 'sans-serif'],
   },
 
   // Font sizes extracted from Figma (Title Hero: 72px, Title Page: 48px, Heading: 24px, etc.)
