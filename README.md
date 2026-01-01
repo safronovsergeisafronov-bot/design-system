@@ -12,6 +12,12 @@ A comprehensive design system with design tokens and a visual style guide built 
 - 📱 Responsive breakpoints
 - 🖼️ Visual style guide for easy reference
 
+## Live Demo
+
+**GitHub Pages**: [View the Design System](https://safronovsergeisafronov-bot.github.io/design-system/)
+
+A static HTML version of the design system is available on GitHub Pages, showcasing all design tokens, typography, spacing, and component examples.
+
 ## Getting Started
 
 ### Installation
@@ -108,14 +114,40 @@ const button = {
 </button>
 ```
 
+## GitHub Pages Deployment
+
+The repository includes a static `index.html` file in the root directory that serves as a GitHub Pages homepage. This file showcases the design system without requiring a Node.js server.
+
+### Setting Up GitHub Pages
+
+1. Go to your repository Settings > Pages
+2. Set Source to: "Deploy from a branch"
+3. Select Branch: `main` (or your default branch)
+4. Select Folder: `/ (root)`
+5. Save
+
+GitHub will automatically deploy the `index.html` file to:
+`https://[your-username].github.io/design-system/`
+
+### Updating the Static HTML
+
+When you update design tokens in `/styles/design-tokens.ts`, you should also update the CSS custom properties in `index.html`:
+
+1. Open `index.html` in an editor
+2. Find the `:root` section with CSS custom properties
+3. Update the color values, spacing, or other tokens to match your changes
+4. The file includes comments indicating which values correspond to which tokens
+
 ## Contributing
 
 When updating design tokens:
 
 1. Update `/styles/design-tokens.ts` with new values
-2. Ensure Tailwind config (`tailwind.config.ts`) references the tokens
-3. Test changes in the style guide at `/styleguide`
-4. Document any breaking changes
+2. Update CSS custom properties in `index.html` if deploying to GitHub Pages
+3. Ensure Tailwind config (`tailwind.config.ts`) references the tokens
+4. Test changes in the style guide at `/styleguide`
+5. Test the static HTML by opening `index.html` in a browser
+6. Document any breaking changes
 
 ## License
 
