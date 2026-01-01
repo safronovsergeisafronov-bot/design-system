@@ -2,8 +2,8 @@
  * Design Tokens
  *
  * This file contains all design tokens for the Worlex design system.
- * TODO: Replace these placeholder values with actual values from Figma:
- * https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System
+ * Extracted from Figma: https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System
+ * Last updated: 2026-01-02
  */
 
 // ============================================================================
@@ -11,100 +11,100 @@
 // ============================================================================
 
 export const colors = {
-  // Primary Colors
+  // Primary Colors (Amber/Gold palette from Figma)
   primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',  // Main primary color
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
-    950: '#082f49',
+    50: '#fffbeb',
+    100: '#fff1c2',
+    200: '#fde8e7',
+    300: '#e8b931',
+    400: '#e5a000',
+    500: '#bf6a02',  // Main primary color
+    600: '#975101',
+    700: '#682d02',
+    800: '#522404',
+    900: '#401b00',
+    950: '#401b00',
   },
 
-  // Secondary Colors
+  // Secondary Colors (Green palette from Figma)
   secondary: {
-    50: '#faf5ff',
-    100: '#f3e8ff',
-    200: '#e9d5ff',
-    300: '#d8b4fe',
-    400: '#c084fc',
-    500: '#a855f7',  // Main secondary color
-    600: '#9333ea',
-    700: '#7e22ce',
-    800: '#6b21a8',
-    900: '#581c87',
-    950: '#3b0764',
+    50: '#ebffee',
+    100: '#cff7d3',
+    200: '#aff4c6',
+    300: '#14ae5c',
+    400: '#009951',
+    500: '#02542d',  // Main secondary color
+    600: '#014022',
+    700: '#014022',
+    800: '#014022',
+    900: '#014022',
+    950: '#014022',
   },
 
-  // Neutral/Gray Colors
+  // Neutral/Gray Colors (from Figma grayscale)
   neutral: {
-    50: '#fafafa',
+    50: '#ffffff',
     100: '#f5f5f5',
-    200: '#e5e5e5',
-    300: '#d4d4d4',
-    400: '#a3a3a3',
-    500: '#737373',
-    600: '#525252',
-    700: '#404040',
-    800: '#262626',
-    900: '#171717',
-    950: '#0a0a0a',
+    200: '#f2f2f2',
+    300: '#e6e6e6',
+    400: '#d9d9d9',
+    500: '#b3b3b3',
+    600: '#767676',
+    700: '#5a5a5a',
+    800: '#444444',
+    900: '#2c2c2c',
+    950: '#1e1e1e',
   },
 
   // Semantic Colors
   semantic: {
     success: {
-      50: '#f0fdf4',
-      100: '#dcfce7',
-      200: '#bbf7d0',
-      300: '#86efac',
-      400: '#4ade80',
-      500: '#22c55e',  // Main success color
-      600: '#16a34a',
-      700: '#15803d',
-      800: '#166534',
-      900: '#14532d',
+      50: '#ebffee',
+      100: '#cff7d3',
+      200: '#aff4c6',
+      300: '#14ae5c',
+      400: '#009951',
+      500: '#02542d',  // Main success color
+      600: '#014022',
+      700: '#014022',
+      800: '#014022',
+      900: '#014022',
     },
     warning: {
       50: '#fffbeb',
-      100: '#fef3c7',
-      200: '#fde68a',
-      300: '#fcd34d',
-      400: '#fbbf24',
-      500: '#f59e0b',  // Main warning color
-      600: '#d97706',
-      700: '#b45309',
-      800: '#92400e',
-      900: '#78350f',
+      100: '#fff1c2',
+      200: '#e8b931',
+      300: '#e5a000',
+      400: '#bf6a02',
+      500: '#975101',  // Main warning color
+      600: '#682d02',
+      700: '#522404',
+      800: '#401b00',
+      900: '#401b00',
     },
     error: {
-      50: '#fef2f2',
-      100: '#fee2e2',
-      200: '#fecaca',
-      300: '#fca5a5',
-      400: '#f87171',
-      500: '#ef4444',  // Main error color
-      600: '#dc2626',
-      700: '#b91c1c',
-      800: '#991b1b',
-      900: '#7f1d1d',
+      50: '#fde8e7',
+      100: '#fdd2cf',
+      200: '#fcb2ad',
+      300: '#eb221e',
+      400: '#bf0f0c',
+      500: '#8f0b09',  // Main error color
+      600: '#8f0b09',
+      700: '#8f0b09',
+      800: '#8f0b09',
+      900: '#8f0b09',
     },
     info: {
-      50: '#eff6ff',
-      100: '#dbeafe',
-      200: '#bfdbfe',
-      300: '#93c5fd',
-      400: '#60a5fa',
-      500: '#3b82f6',  // Main info color
-      600: '#2563eb',
-      700: '#1d4ed8',
-      800: '#1e40af',
-      900: '#1e3a8a',
+      50: '#fae1fa',
+      100: '#fae1fa',
+      200: '#fae1fa',
+      300: '#fae1fa',
+      400: '#fae1fa',
+      500: '#fae1fa',  // Main info color
+      600: '#fae1fa',
+      700: '#fae1fa',
+      800: '#fae1fa',
+      900: '#fae1fa',
     },
   },
 
@@ -123,50 +123,51 @@ export const typography = {
   fontFamily: {
     sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
     serif: ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],
-    mono: ['Fira Code', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
+    mono: ['Roboto Mono', 'Consolas', 'Monaco', 'Courier New', 'monospace'],
     display: ['Inter', 'system-ui', 'sans-serif'],
   },
 
+  // Font sizes extracted from Figma (Title Hero: 72px, Title Page: 48px, Heading: 24px, etc.)
   fontSize: {
-    xs: ['0.75rem', { lineHeight: '1rem' }],      // 12px
-    sm: ['0.875rem', { lineHeight: '1.25rem' }],   // 14px
-    base: ['1rem', { lineHeight: '1.5rem' }],      // 16px
-    lg: ['1.125rem', { lineHeight: '1.75rem' }],   // 18px
-    xl: ['1.25rem', { lineHeight: '1.75rem' }],    // 20px
-    '2xl': ['1.5rem', { lineHeight: '2rem' }],     // 24px
+    xs: ['0.75rem', { lineHeight: '1rem' }],        // 12px
+    sm: ['0.875rem', { lineHeight: '1.225rem' }],   // 14px - Body Small
+    base: ['1rem', { lineHeight: '1.4rem' }],       // 16px - Body Base
+    lg: ['1.125rem', { lineHeight: '1.575rem' }],   // 18px
+    xl: ['1.25rem', { lineHeight: '1.5rem' }],      // 20px - Subheading
+    '2xl': ['1.5rem', { lineHeight: '1.8rem' }],    // 24px - Heading
     '3xl': ['1.875rem', { lineHeight: '2.25rem' }], // 30px
-    '4xl': ['2.25rem', { lineHeight: '2.5rem' }],  // 36px
-    '5xl': ['3rem', { lineHeight: '1' }],          // 48px
-    '6xl': ['3.75rem', { lineHeight: '1' }],       // 60px
-    '7xl': ['4.5rem', { lineHeight: '1' }],        // 72px
-    '8xl': ['6rem', { lineHeight: '1' }],          // 96px
-    '9xl': ['8rem', { lineHeight: '1' }],          // 128px
+    '4xl': ['2rem', { lineHeight: '2.4rem' }],      // 32px - Subtitle
+    '5xl': ['3rem', { lineHeight: '3.6rem' }],      // 48px - Title Page
+    '6xl': ['3.75rem', { lineHeight: '4.5rem' }],   // 60px
+    '7xl': ['4.5rem', { lineHeight: '5.4rem' }],    // 72px - Title Hero
+    '8xl': ['6rem', { lineHeight: '6rem' }],        // 96px
+    '9xl': ['8rem', { lineHeight: '8rem' }],        // 128px
   },
 
   fontWeight: {
     thin: '100',
     extralight: '200',
     light: '300',
-    normal: '400',
+    normal: '400',      // Body text
     medium: '500',
-    semibold: '600',
-    bold: '700',
+    semibold: '600',    // Heading, Body Strong
+    bold: '700',        // Title Hero, Title Page
     extrabold: '800',
     black: '900',
   },
 
   lineHeight: {
     none: '1',
-    tight: '1.25',
+    tight: '1.2',      // ~120% for titles
     snug: '1.375',
-    normal: '1.5',
+    normal: '1.4',     // ~140% for body text
     relaxed: '1.625',
     loose: '2',
   },
 
   letterSpacing: {
-    tighter: '-0.05em',
-    tight: '-0.025em',
+    tighter: '-0.03em',  // Title Hero: -2.16px on 72px = -0.03em
+    tight: '-0.02em',    // Title Page: -0.96px on 48px = -0.02em
     normal: '0em',
     wide: '0.025em',
     wider: '0.05em',
