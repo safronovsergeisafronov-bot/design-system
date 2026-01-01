@@ -1,8 +1,6 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/design-guide.html"
-    }
-  ]
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "installCommand": "",
+  "cleanUrls": true
 }

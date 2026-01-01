@@ -1,0 +1,7 @@
+app/
+.next/
+next.config.js
+next-env.d.ts
+tsconfig.json
+tailwind.config.ts
+postcss.config.js
