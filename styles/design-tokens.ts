@@ -2,7 +2,7 @@
  * Design Tokens
  *
  * This file contains all design tokens for the Worlex design system.
- * Extracted from Figma: https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System
+ * Primary color updated to #801C1E (Deep Red)
  * Last updated: 2026-01-02
  */
 
@@ -11,19 +11,19 @@
 // ============================================================================
 
 export const colors = {
-  // Primary Colors (Amber/Gold palette from Figma)
+  // Primary Colors (Deep Red palette)
   primary: {
-    50: '#fffbeb',
-    100: '#fff1c2',
-    200: '#fde8e7',
-    300: '#e8b931',
-    400: '#e5a000',
-    500: '#bf6a02',  // Main primary color
-    600: '#975101',
-    700: '#682d02',
-    800: '#522404',
-    900: '#401b00',
-    950: '#401b00',
+    50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
+    300: '#fca5a5',
+    400: '#f87171',
+    500: '#801C1E',  // Main primary color
+    600: '#6b1719',
+    700: '#5a1315',
+    800: '#450f11',
+    900: '#3a0d0e',
+    950: '#2a0909',
   },
 
   // Secondary Colors (Green palette from Figma)
