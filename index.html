@@ -1358,6 +1358,125 @@
                 </div>
             </div>
 
+            <!-- Forms & Inputs -->
+            <div class="mt-8">
+                <h4 class="mb-4">Forms & Inputs</h4>
+                <div class="component-grid">
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Text Input</h4>
+                        <input type="text" placeholder="Enter text..." style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); transition: all var(--transition-fast);">
+                        <input type="text" placeholder="Focus state" style="width: 100%; padding: var(--space-3); border: 2px solid var(--primary-500); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); margin-top: var(--space-3); outline: none; box-shadow: 0 0 0 3px rgba(128, 28, 30, 0.1);">
+                        <input type="text" placeholder="Disabled" disabled style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-200); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); margin-top: var(--space-3); background: var(--neutral-100); color: var(--neutral-500); cursor: not-allowed;">
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Textarea</h4>
+                        <textarea placeholder="Enter message..." rows="4" style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); resize: vertical;"></textarea>
+                        <h4 style="margin: var(--space-4) 0;">Select</h4>
+                        <select style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base);">
+                            <option>Choose option...</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Checkboxes & Radio</h4>
+                        <div style="margin-bottom: var(--space-3);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Checkbox option 1</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom: var(--space-4);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" checked style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Checkbox option 2</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom: var(--space-3);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="radio" style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Radio option 1</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="radio" checked style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Radio option 2</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badges & Chips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Badges & Chips</h4>
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center;">
+                    <span style="display: inline-block; background: var(--primary-500); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Primary Badge</span>
+                    <span style="display: inline-block; background: var(--secondary-500); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Secondary Badge</span>
+                    <span style="display: inline-block; background: var(--success-300); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Success</span>
+                    <span style="display: inline-block; background: var(--warning-300); color: var(--neutral-900); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Warning</span>
+                    <span style="display: inline-block; background: var(--error-300); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Error</span>
+                    <span style="display: inline-block; background: var(--neutral-200); color: var(--neutral-900); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Neutral</span>
+                    <span style="display: inline-flex; align-items: center; background: var(--primary-100); color: var(--primary-700); padding: var(--space-2) var(--space-3); border-radius: var(--radius-lg); font-size: var(--text-sm); font-weight: 500; border: 1px solid var(--primary-300);">
+                        <span>Chip with close</span>
+                        <button style="background: none; border: none; margin-left: var(--space-2); cursor: pointer; color: var(--primary-700); font-weight: bold;">×</button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Alerts & Notifications -->
+            <div class="mt-8">
+                <h4 class="mb-4">Alerts & Notifications</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="padding: var(--space-4); background: var(--success-50); border-left: 4px solid var(--success-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--success-500); margin-bottom: var(--space-1);">Success</div>
+                        <div style="color: var(--success-500); font-size: var(--text-sm);">Your changes have been saved successfully!</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--warning-50); border-left: 4px solid var(--warning-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--warning-500); margin-bottom: var(--space-1);">Warning</div>
+                        <div style="color: var(--warning-500); font-size: var(--text-sm);">Please review your information before proceeding.</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--error-50); border-left: 4px solid var(--error-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--error-500); margin-bottom: var(--space-1);">Error</div>
+                        <div style="color: var(--error-500); font-size: var(--text-sm);">An error occurred while processing your request.</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--neutral-100); border-left: 4px solid var(--neutral-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--neutral-800); margin-bottom: var(--space-1);">Info</div>
+                        <div style="color: var(--neutral-700); font-size: var(--text-sm);">This is an informational message for your reference.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icon Sizes -->
+            <div class="mt-8">
+                <h4 class="mb-4">Icon Sizes</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-4); font-size: var(--text-sm);">Standard icon sizing system</p>
+                <div style="display: flex; gap: var(--space-6); align-items: flex-end; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <div style="width: 16px; height: 16px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">16px (xs)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 20px; height: 20px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">20px (sm)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 24px; height: 24px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">24px (md)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 32px; height: 32px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">32px (lg)</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="width: 48px; height: 48px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">48px (xl)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
             <div class="mt-8">
                 <h4 class="mb-4">Cards</h4>
                 <div class="component-grid">
@@ -1380,6 +1499,172 @@
             </div>
         </div>
     </section>
+
+    <!-- Grid & Layout Section -->
+    <section id="layout" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Grid & Layout</h2>
+                <p class="section-description">Flexible grid system and layout utilities</p>
+            </div>
+
+            <!-- Container Sizes -->
+            <div class="mt-8">
+                <h4 class="mb-4">Container Sizes</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 640px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">SM - 640px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 768px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">MD - 768px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 1024px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">LG - 1024px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 1280px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">XL - 1280px (Default)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid System -->
+            <div class="mt-8">
+                <h4 class="mb-4">12-Column Grid</h4>
+                <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-2);">
+                    <div style="grid-column: span 12; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">12 columns</div>
+                    <div style="grid-column: span 6; background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">6 cols</div>
+                    <div style="grid-column: span 6; background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">6 cols</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                </div>
+            </div>
+
+            <!-- Flexbox Layouts -->
+            <div class="mt-8">
+                <h4 class="mb-4">Flexbox Layouts</h4>
+                <div style="display: grid; gap: var(--space-6);">
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Space Between</div>
+                        <div style="display: flex; justify-content: space-between; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 1</div>
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 2</div>
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Space Around</div>
+                        <div style="display: flex; justify-content: space-around; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 1</div>
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 2</div>
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Center Aligned</div>
+                        <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md); min-height: 100px;">
+                            <div style="background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Centered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section id="animations" class="section" style="background-color: var(--neutral-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Animations & Transitions</h2>
+                <p class="section-description">Motion and timing functions for interactive elements</p>
+            </div>
+
+            <!-- Transition Timing -->
+            <div class="mt-8">
+                <h4 class="mb-4">Transition Speeds</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Fast (150ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--primary-500); transition: width 150ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Base (300ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--secondary-500); transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Slow (500ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--card-work); transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="animateProgressBars()" style="margin-top: var(--space-4);" class="btn btn-primary">Animate Progress Bars</button>
+            </div>
+
+            <!-- Hover Effects -->
+            <div class="mt-8">
+                <h4 class="mb-4">Hover Effects</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
+                    <div class="hover-scale" style="background: var(--primary-500); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: transform var(--transition-base);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Scale</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                    <div class="hover-lift" style="background: var(--secondary-500); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: all var(--transition-base); box-shadow: var(--shadow-md);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Lift</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                    <div class="hover-glow" style="background: var(--card-work); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: all var(--transition-base);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Glow</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .hover-scale:hover {
+                    transform: scale(1.05);
+                }
+                .hover-lift:hover {
+                    transform: translateY(-4px);
+                    box-shadow: var(--shadow-xl);
+                }
+                .hover-glow:hover {
+                    box-shadow: 0 0 20px rgba(38, 70, 83, 0.5);
+                }
+            </style>
+        </div>
+    </section>
+
+    <script>
+        function animateProgressBars() {
+            const bars = document.querySelectorAll('.progress-bar');
+            bars.forEach(bar => {
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = '100%';
+                }, 50);
+            });
+            setTimeout(() => {
+                bars.forEach(bar => {
+                    bar.style.width = '0%';
+                });
+            }, 2000);
+        }
+    </script>
 
     <!-- Getting Started Section -->
     <section id="getting-started" class="section">
