@@ -168,6 +168,48 @@
         }
 
         /* ============================================================================
+           DARK MODE SUPPORT
+           ============================================================================ */
+
+        [data-theme="dark"] {
+            --primary-50: #2a0909;
+            --primary-100: #3a0d0e;
+            --primary-200: #450f11;
+            --primary-300: #5a1315;
+            --primary-400: #6b1719;
+            --primary-500: #801C1E;
+            --primary-600: #f87171;
+            --primary-700: #fca5a5;
+            --primary-800: #fecaca;
+            --primary-900: #fee2e2;
+            --primary-950: #fef2f2;
+
+            --neutral-50: #000000;
+            --neutral-100: #111111;
+            --neutral-200: #1a1a1a;
+            --neutral-300: #2a2a2a;
+            --neutral-400: #3a3a3a;
+            --neutral-500: #5a5a5a;
+            --neutral-600: #999999;
+            --neutral-700: #b3b3b3;
+            --neutral-800: #d9d9d9;
+            --neutral-900: #f5f5f5;
+            --neutral-950: #ffffff;
+
+            --bg-paper: #0a0a0a;
+            --bg-white: #1a1a1a;
+
+            --success-50: #014022;
+            --success-500: #14ae5c;
+
+            --warning-50: #401b00;
+            --warning-500: #e8b931;
+
+            --error-50: #3a0000;
+            --error-500: #eb221e;
+        }
+
+        /* ============================================================================
            GLOBAL STYLES
            ============================================================================ */
 
@@ -187,6 +229,7 @@
             line-height: 1.4;
             color: var(--neutral-900);
             background-color: var(--neutral-50);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -695,8 +738,28 @@
                 <li><a href="#colors">Colors</a></li>
                 <li><a href="#typography">Typography</a></li>
                 <li><a href="#spacing">Spacing</a></li>
+                <li><a href="#icons">Icons</a></li>
                 <li><a href="#components">Components</a></li>
                 <li><a href="#getting-started">Get Started</a></li>
+                <li>
+                    <button id="theme-toggle" onclick="toggleTheme()" style="background: none; border: 2px solid var(--neutral-300); border-radius: var(--radius-full); padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); font-weight: 600; color: var(--neutral-900); transition: all var(--transition-normal);">
+                        <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <span id="theme-text">Dark</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -1952,6 +2015,116 @@
 
             </div>
 
+            <!-- Tooltips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tooltips</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-4); font-size: var(--text-sm);">
+                    Hover over elements to see tooltip examples
+                </p>
+                <div style="display: flex; gap: var(--space-6); flex-wrap: wrap; align-items: center; padding: var(--space-8);">
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn btn-primary" onmouseenter="showTooltip('tooltip-top')" onmouseleave="hideTooltip('tooltip-top')">
+                            Tooltip Top
+                        </button>
+                        <div id="tooltip-top" style="display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 8px; background: var(--neutral-900); color: var(--neutral-50); padding: 6px 12px; border-radius: var(--radius-md); font-size: var(--text-sm); white-space: nowrap; box-shadow: var(--shadow-lg);">
+                            This is a tooltip
+                            <div style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: var(--neutral-900);"></div>
+                        </div>
+                    </div>
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn btn-secondary" onmouseenter="showTooltip('tooltip-right')" onmouseleave="hideTooltip('tooltip-right')">
+                            Tooltip Right
+                        </button>
+                        <div id="tooltip-right" style="display: none; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); margin-left: 8px; background: var(--neutral-900); color: var(--neutral-50); padding: 6px 12px; border-radius: var(--radius-md); font-size: var(--text-sm); white-space: nowrap; box-shadow: var(--shadow-lg);">
+                            Helpful information
+                            <div style="position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 4px solid transparent; border-right-color: var(--neutral-900);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tags & Chips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tags & Chips</h4>
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                    <span style="display: inline-block; background: var(--primary-100); color: var(--primary-700); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Primary Tag</span>
+                    <span style="display: inline-block; background: var(--secondary-100); color: var(--secondary-700); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Secondary Tag</span>
+                    <span style="display: inline-block; background: var(--success-100); color: var(--success-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Success Tag</span>
+                    <span style="display: inline-block; background: var(--warning-100); color: var(--warning-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Warning Tag</span>
+                    <span style="display: inline-block; background: var(--error-100); color: var(--error-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Error Tag</span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; background: var(--neutral-100); color: var(--neutral-800); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">
+                        <span>Removable</span>
+                        <button onclick="this.parentElement.remove()" style="background: none; border: none; padding: 0; cursor: pointer; color: var(--neutral-600); font-weight: bold; font-size: 16px;">×</button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tabs</h4>
+                <div style="border-bottom: 2px solid var(--neutral-200);">
+                    <div style="display: flex; gap: 0;">
+                        <button onclick="switchTab(0)" class="tab-button tab-active" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--primary-500); border-bottom: 2px solid var(--primary-500); margin-bottom: -2px; transition: all var(--transition-fast);">Overview</button>
+                        <button onclick="switchTab(1)" class="tab-button" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--neutral-600); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all var(--transition-fast);">Features</button>
+                        <button onclick="switchTab(2)" class="tab-button" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--neutral-600); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all var(--transition-fast);">Settings</button>
+                    </div>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: block;">
+                    <h5>Overview Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">This is the overview tab content. Tabs help organize content into separate views.</p>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: none;">
+                    <h5>Features Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">Here you can list all the amazing features of your product.</p>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: none;">
+                    <h5>Settings Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">Configure your preferences and options here.</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-8">
+                <h4 class="mb-4">Pagination</h4>
+                <div style="display: flex; gap: var(--space-2); align-items: center;">
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">Previous</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--primary-500); background: var(--primary-500); border-radius: var(--radius-md); cursor: pointer; color: white; font-weight: 600;">1</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">2</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">3</button>
+                    <span style="color: var(--neutral-500);">...</span>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">10</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">Next</button>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="mt-8">
+                <h4 class="mb-4">Notifications</h4>
+                <div style="display: grid; gap: var(--space-4); max-width: 500px;">
+                    <div style="padding: var(--space-4); background: var(--bg-white); border-left: 4px solid var(--success-400); border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: start; gap: var(--space-3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success-500)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 4px;">Success!</div>
+                            <div style="color: var(--neutral-700); font-size: var(--text-sm);">Your changes have been saved successfully.</div>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--bg-white); border-left: 4px solid var(--error-400); border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: start; gap: var(--space-3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--error-500)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 4px;">Error!</div>
+                            <div style="color: var(--neutral-700); font-size: var(--text-sm);">Something went wrong. Please try again.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Cards -->
             <div class="mt-8">
                 <h4 class="mb-4">Cards</h4>
@@ -2220,7 +2393,9 @@ const button = {
                         <li><a href="#colors">Colors</a></li>
                         <li><a href="#typography">Typography</a></li>
                         <li><a href="#spacing">Spacing</a></li>
+                        <li><a href="#icons">Icons (287)</a></li>
                         <li><a href="#components">Components</a></li>
+                        <li><a href="figma-icons-complete.md">Icon Library</a></li>
                     </ul>
                 </div>
             </div>
@@ -2232,6 +2407,76 @@ const button = {
 
     <!-- JavaScript -->
     <script>
+        // Theme Toggle Functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Update button
+            updateThemeButton(newTheme);
+        }
+
+        function updateThemeButton(theme) {
+            const sunIcon = document.getElementById('theme-icon-sun');
+            const moonIcon = document.getElementById('theme-icon-moon');
+            const themeText = document.getElementById('theme-text');
+
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                themeText.textContent = 'Light';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                themeText.textContent = 'Dark';
+            }
+        }
+
+        // Initialize theme on page load
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme === 'dark' || (savedTheme === null && prefersDark) ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeButton(theme);
+        })();
+
+        // Tooltip functionality
+        function showTooltip(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideTooltip(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Tabs functionality
+        function switchTab(index) {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.style.color = 'var(--primary-500)';
+                    btn.style.borderBottomColor = 'var(--primary-500)';
+                    btn.classList.add('tab-active');
+                } else {
+                    btn.style.color = 'var(--neutral-600)';
+                    btn.style.borderBottomColor = 'transparent';
+                    btn.classList.remove('tab-active');
+                }
+            });
+
+            tabContents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
         // Copy to clipboard functionality
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
