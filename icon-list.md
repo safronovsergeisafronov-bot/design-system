@@ -1,15 +1,24 @@
 # Worlex Design System - Icon Library
 
+**✅ 287 Icons Available in Figma**
+
+All icons from the Feather Icons library are already implemented in your Figma design system with all 6 sizes!
+
+- **Figma File:** [Worlex - Simple Design System](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System)
+- **24px Section:** [View 24px icons](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9328)
+- **Complete List:** See [figma-icons-complete.md](figma-icons-complete.md) for all 287 icons with categories
+
 ## Naming Convention for Figma
 Format: `icon-name/size`
 Example: `home/24`, `user/16`, `search/32`
 
-## Sizes
-- 16px (xs) - Inline text
-- 20px (sm) - Buttons, inputs
-- 24px (md) - Navigation (default)
-- 32px (lg) - Cards, headers
-- 48px (xl) - Features, heroes
+## Sizes Available in Figma
+- 16px (xs) - Inline text - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=522-12152)
+- 20px (sm) - Buttons, inputs - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9331)
+- 24px (md) - Navigation (default) - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9328)
+- 32px (lg) - Cards, headers - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9326)
+- 40px (xl) - Feature sections - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9310)
+- 48px (2xl) - Heroes, large features - [View in Figma](https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-4845)
 
 ---
 
