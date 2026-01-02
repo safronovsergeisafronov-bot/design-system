@@ -18,6 +18,72 @@ export default function StyleGuidePage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+        {/* Demo Section - Category Cards */}
+        <section id="demo" className="mb-16">
+          <h2 className="text-3xl font-bold mb-4 text-neutral-900">
+            Category Card System
+          </h2>
+          <p className="text-neutral-600 mb-8">
+            Visual demonstration of the category colors from screenshot
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <CategoryCard
+              title="Кафе/ресторан"
+              color="terracotta"
+              items={['Заказать еду', 'Уточнить состав блюда', 'Спросить про террасу', 'Оплатить счёт']}
+            />
+            <CategoryCard
+              title="Знакомства"
+              color="pink"
+              items={['Познакомиться', 'Поддержать разговор', 'Договориться о встрече']}
+            />
+            <CategoryCard
+              title="Работа"
+              color="navy"
+              items={['Провести звонок', 'Сказать что занят', 'Перенести встречу', 'Обсудить дедлайн']}
+            />
+            <CategoryCard
+              title="Погода/время"
+              color="golden"
+              items={['Спросить время', 'Уточнить расстояние', 'Обсудить жару или холод']}
+            />
+            <CategoryCard
+              title="Путешествия"
+              color="sage"
+              items={['Спросить дорогу', 'На улице', 'Уточнить транспорт']}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
+            <CategoryCard
+              title="Вежливость"
+              color="mint"
+              items={['Поблагодарить', 'Извиниться', 'Поднять тост', 'Выразить поддержку']}
+            />
+            <CategoryCard
+              title="Быт"
+              color="mustard"
+              items={['Купить продукты', 'Оплатить на кассе', 'Вызвать такси', 'Уточнить цену']}
+            />
+            <CategoryCard
+              title="Здоровье"
+              color="blue"
+              items={['Попросить лекарство', 'Описать симптом', 'Спросить рецепт']}
+            />
+            <CategoryCard
+              title="Развлечения"
+              color="coral"
+              items={['Купить билет в кино', 'Заказать напиток в баре', 'Обсудить музыку']}
+            />
+            <CategoryCard
+              title="Special"
+              color="burgundy"
+              items={['Quick access', 'Living French', 'Really works']}
+            />
+          </div>
+        </section>
+
         {/* Colors Section */}
         <section id="colors">
           <h2 className="text-3xl font-bold mb-8 text-neutral-900">Colors</h2>
@@ -71,6 +137,34 @@ export default function StyleGuidePage() {
                 />
               ))}
             </div>
+          </div>
+
+          {/* Category Colors */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-4 text-neutral-800">
+              Category Colors
+            </h3>
+            <p className="text-neutral-600 mb-6">
+              Colors extracted from the screenshot - representing different Russian language learning categories
+            </p>
+
+            {Object.entries(designTokens.colors.categories).map(([categoryName, shades]) => (
+              <div key={categoryName} className="mb-6">
+                <h4 className="text-lg font-medium mb-3 text-neutral-700 capitalize">
+                  {categoryName}
+                </h4>
+                <div className="grid grid-cols-9 gap-2">
+                  {Object.entries(shades).map(([key, value]) => (
+                    <ColorSwatch
+                      key={key}
+                      name={`${categoryName}-${key}`}
+                      value={value}
+                      label={key}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Semantic Colors */}
@@ -381,6 +475,46 @@ function ColorSwatch({
       <div className="mt-1 text-center">
         <code className="text-xs text-neutral-600">{value}</code>
       </div>
+    </div>
+  );
+}
+
+// Category Card Component - Replicates the design from screenshot
+function CategoryCard({
+  title,
+  color,
+  items,
+}: {
+  title: string;
+  color: string;
+  items: string[];
+}) {
+  const colorMap: Record<string, string> = {
+    terracotta: 'bg-terracotta-500 text-white',
+    pink: 'bg-pink-500 text-neutral-800',
+    navy: 'bg-navy-500 text-white',
+    golden: 'bg-golden-500 text-neutral-800',
+    sage: 'bg-sage-500 text-white',
+    mint: 'bg-mint-500 text-neutral-800',
+    mustard: 'bg-mustard-500 text-neutral-800',
+    blue: 'bg-blue-500 text-white',
+    coral: 'bg-coral-500 text-white',
+    burgundy: 'bg-burgundy-500 text-white',
+  };
+
+  return (
+    <div
+      className={`${colorMap[color]} rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow`}
+    >
+      <h3 className="text-lg font-semibold mb-4">{title}</h3>
+      <ul className="space-y-2">
+        {items.map((item, index) => (
+          <li key={index} className="flex items-start">
+            <span className="mr-2 opacity-70">•</span>
+            <span className="text-sm opacity-90">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

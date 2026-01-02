@@ -19,6 +19,17 @@ const config: Config = {
         info: designTokens.colors.semantic.info,
         background: designTokens.colors.background,
         cards: designTokens.colors.cards,
+        // Category colors from screenshot (full palettes)
+        terracotta: designTokens.colors.categories.terracotta,
+        pink: designTokens.colors.categories.pink,
+        navy: designTokens.colors.categories.navy,
+        golden: designTokens.colors.categories.golden,
+        sage: designTokens.colors.categories.sage,
+        mint: designTokens.colors.categories.mint,
+        mustard: designTokens.colors.categories.mustard,
+        blue: designTokens.colors.categories.blue,
+        coral: designTokens.colors.categories.coral,
+        burgundy: designTokens.colors.categories.burgundy,
       },
       fontFamily: {
         sans: designTokens.typography.fontFamily.sans,
