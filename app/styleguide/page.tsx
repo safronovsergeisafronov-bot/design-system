@@ -18,6 +18,50 @@ export default function StyleGuidePage() {
       </header>
 
       <main className="max-w-7xl mx-auto px-6 py-12 space-y-16">
+        {/* Components Section */}
+        <section id="components" className="mb-16">
+          <h2 className="text-3xl font-bold mb-4 text-neutral-900">
+            Components
+          </h2>
+          <p className="text-neutral-600 mb-8">
+            Reusable UI components from the design system
+          </p>
+
+          {/* Info Card Component */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold mb-4 text-neutral-800">
+              Info Card
+            </h3>
+            <p className="text-neutral-600 mb-6">
+              Informational card with icon, heading, and description text
+            </p>
+            <div className="max-w-md">
+              <InfoCard
+                icon={
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-neutral-900"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                }
+                heading="Доступ в личный кабинет"
+                text="Сразу после оплаты на ваш e-mail приходят логин и пароль для входа в личный кабинет."
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Demo Section - Category Cards */}
         <section id="demo" className="mb-16">
           <h2 className="text-3xl font-bold mb-4 text-neutral-900">
@@ -475,6 +519,44 @@ function ColorSwatch({
       <div className="mt-1 text-center">
         <code className="text-xs text-neutral-600">{value}</code>
       </div>
+    </div>
+  );
+}
+
+// Info Card Component - Informational card with icon, heading, and text
+function InfoCard({
+  icon,
+  heading,
+  text,
+}: {
+  icon: React.ReactNode;
+  heading: string;
+  text: string;
+}) {
+  const bgColor = designTokens.colors.background.paper;
+  
+  return (
+    <div 
+      className="rounded-2xl p-6"
+      style={{ backgroundColor: bgColor }}
+    >
+      {/* Icon Container - Square with rounded corners, same beige background */}
+      <div 
+        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
+        style={{ backgroundColor: bgColor }}
+      >
+        {icon}
+      </div>
+      
+      {/* Heading */}
+      <h3 className="text-xl font-bold text-neutral-900 mb-2">
+        {heading}
+      </h3>
+      
+      {/* Description Text */}
+      <p className="text-base text-neutral-700 leading-relaxed">
+        {text}
+      </p>
     </div>
   );
 }
