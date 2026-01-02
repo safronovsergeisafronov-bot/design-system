@@ -1,6 +1,7 @@
 'use client';
 
 import { designTokens } from '@/styles/design-tokens';
+import { InfoCard } from '@/components/InfoCard';
 
 export default function StyleGuidePage() {
   return (
@@ -30,24 +31,25 @@ export default function StyleGuidePage() {
           {/* Info Card Component */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-4 text-neutral-800">
-              Info Card
+              Info Card / Access
             </h3>
             <p className="text-neutral-600 mb-6">
-              Informational card with icon, heading, and description text
+              Soft informational card with rounded corners and neutral background.
+              Used to explain what happens next. Includes a subtle icon, a clear title, and supporting text.
+              Calm, trustworthy, and unobtrusive.
             </p>
             <div className="max-w-md">
               <InfoCard
                 icon={
                   <svg
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-neutral-900"
                   >
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
@@ -55,8 +57,8 @@ export default function StyleGuidePage() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
                 }
-                heading="Доступ в личный кабинет"
-                text="Сразу после оплаты на ваш e-mail приходят логин и пароль для входа в личный кабинет."
+                title="Доступ в личный кабинет"
+                description="Сразу после оплаты на ваш e-mail приходят логин и пароль для входа в личный кабинет."
               />
             </div>
           </div>
@@ -519,44 +521,6 @@ function ColorSwatch({
       <div className="mt-1 text-center">
         <code className="text-xs text-neutral-600">{value}</code>
       </div>
-    </div>
-  );
-}
-
-// Info Card Component - Informational card with icon, heading, and text
-function InfoCard({
-  icon,
-  heading,
-  text,
-}: {
-  icon: React.ReactNode;
-  heading: string;
-  text: string;
-}) {
-  const bgColor = designTokens.colors.background.paper;
-  
-  return (
-    <div 
-      className="rounded-2xl p-6"
-      style={{ backgroundColor: bgColor }}
-    >
-      {/* Icon Container - Square with rounded corners, same beige background */}
-      <div 
-        className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
-        style={{ backgroundColor: bgColor }}
-      >
-        {icon}
-      </div>
-      
-      {/* Heading */}
-      <h3 className="text-xl font-bold text-neutral-900 mb-2">
-        {heading}
-      </h3>
-      
-      {/* Description Text */}
-      <p className="text-base text-neutral-700 leading-relaxed">
-        {text}
-      </p>
     </div>
   );
 }
