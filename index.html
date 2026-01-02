@@ -1448,32 +1448,422 @@
                 </div>
             </div>
 
-            <!-- Icon Sizes -->
-            <div class="mt-8">
-                <h4 class="mb-4">Icon Sizes</h4>
-                <p style="color: var(--neutral-700); margin-bottom: var(--space-4); font-size: var(--text-sm);">Standard icon sizing system</p>
-                <div style="display: flex; gap: var(--space-6); align-items: flex-end; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="width: 16px; height: 16px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">16px (xs)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="width: 20px; height: 20px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">20px (sm)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="width: 24px; height: 24px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">24px (md)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="width: 32px; height: 32px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">32px (lg)</div>
-                    </div>
-                    <div style="text-align: center;">
-                        <div style="width: 48px; height: 48px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
-                        <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">48px (xl)</div>
+            <!-- Icon Library -->
+            <div class="mt-8" id="icons">
+                <h4 class="mb-4">Icon Library</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-6); font-size: var(--text-sm);">
+                    Complete icon set for the Worlex design system. All icons available in 16px, 20px, 24px, 32px, and 48px sizes.
+                    <br>
+                    <strong>Figma naming convention:</strong> icon-name/size (e.g., "home/24", "user/16")
+                </p>
+
+                <!-- Icon Sizes Reference -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Icon Sizes</h5>
+                    <div style="display: flex; gap: var(--space-6); align-items: flex-end; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div style="width: 16px; height: 16px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">16px (xs)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Inline text</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 20px; height: 20px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">20px (sm)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Buttons, inputs</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">24px (md)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Navigation</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 32px; height: 32px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">32px (lg)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Cards, headers</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">48px (xl)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Features, heroes</div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Navigation & Actions -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Navigation & Actions</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">home</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">search</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">menu</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">close</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-left</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-right</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-down</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-left</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-right</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-down</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User & Account -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">User & Account</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">users</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user-plus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">login</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">logout</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content & Media -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Content & Media</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">image</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">video</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">audio</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">file</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">document</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">folder</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">camera</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">play</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">pause</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">volume</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Communication</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">mail</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">message</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chat</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">phone</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">bell</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">notification</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions & Status -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Actions & Status</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">plus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">minus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">edit</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">delete</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">trash</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">save</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">download</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">upload</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">check</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">check-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">x-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">info</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">alert-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">alert-triangle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">loading</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">refresh</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings & Tools -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Settings & Tools</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">settings</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">filter</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">calendar</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">clock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">map</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">location</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">lock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">unlock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">eye</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">eye-off</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce & Business -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">E-commerce & Business</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">shopping-cart</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">shopping-bag</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">credit-card</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">dollar</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">tag</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">gift</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social & Sharing -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Social & Sharing</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">heart</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">star</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">share</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">bookmark</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">thumbs-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">thumbs-down</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning & Education (Russian App Specific) -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Learning & Education</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">book</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">book-open</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">graduation-cap</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">trophy</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">target</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">award</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Cards -->

@@ -1,0 +1,79 @@
+Category,Icon Name,Size 16,Size 20,Size 24,Size 32,Size 48,Usage
+Navigation & Actions,home,home/16,home/20,home/24,home/32,home/48,Home button navigation
+Navigation & Actions,search,search/16,search/20,search/24,search/32,search/48,Search input button
+Navigation & Actions,menu,menu/16,menu/20,menu/24,menu/32,menu/48,Hamburger mobile menu
+Navigation & Actions,close,close/16,close/20,close/24,close/32,close/48,Close modal/dialog X button
+Navigation & Actions,arrow-left,arrow-left/16,arrow-left/20,arrow-left/24,arrow-left/32,arrow-left/48,Previous navigate back
+Navigation & Actions,arrow-right,arrow-right/16,arrow-right/20,arrow-right/24,arrow-right/32,arrow-right/48,Next navigate forward
+Navigation & Actions,arrow-up,arrow-up/16,arrow-up/20,arrow-up/24,arrow-up/32,arrow-up/48,Scroll up expand
+Navigation & Actions,arrow-down,arrow-down/16,arrow-down/20,arrow-down/24,arrow-down/32,arrow-down/48,Scroll down collapse
+Navigation & Actions,chevron-left,chevron-left/16,chevron-left/20,chevron-left/24,chevron-left/32,chevron-left/48,Carousel previous subtle nav
+Navigation & Actions,chevron-right,chevron-right/16,chevron-right/20,chevron-right/24,chevron-right/32,chevron-right/48,Carousel next subtle nav
+Navigation & Actions,chevron-up,chevron-up/16,chevron-up/20,chevron-up/24,chevron-up/32,chevron-up/48,Accordion collapse up
+Navigation & Actions,chevron-down,chevron-down/16,chevron-down/20,chevron-down/24,chevron-down/32,chevron-down/48,Accordion expand down
+User & Account,user,user/16,user/20,user/24,user/32,user/48,User profile avatar
+User & Account,user-circle,user-circle/16,user-circle/20,user-circle/24,user-circle/32,user-circle/48,User account filled avatar
+User & Account,users,users/16,users/20,users/24,users/32,users/48,Team group multiple users
+User & Account,user-plus,user-plus/16,user-plus/20,user-plus/24,user-plus/32,user-plus/48,Add new user invite
+User & Account,login,login/16,login/20,login/24,login/32,login/48,Sign in enter
+User & Account,logout,logout/16,logout/20,logout/24,logout/32,logout/48,Sign out exit
+Content & Media,image,image/16,image/20,image/24,image/32,image/48,Photo picture gallery
+Content & Media,video,video/16,video/20,video/24,video/32,video/48,Video camera recording
+Content & Media,audio,audio/16,audio/20,audio/24,audio/32,audio/48,Sound music podcast
+Content & Media,file,file/16,file/20,file/24,file/32,file/48,Document attachment
+Content & Media,document,document/16,document/20,document/24,document/32,document/48,Text document page
+Content & Media,folder,folder/16,folder/20,folder/24,folder/32,folder/48,Directory file folder
+Content & Media,camera,camera/16,camera/20,camera/24,camera/32,camera/48,Photo capture camera
+Content & Media,play,play/16,play/20,play/24,play/32,play/48,Play video audio start
+Content & Media,pause,pause/16,pause/20,pause/24,pause/32,pause/48,Pause video audio stop
+Content & Media,volume,volume/16,volume/20,volume/24,volume/32,volume/48,Sound volume speaker
+Communication,mail,mail/16,mail/20,mail/24,mail/32,mail/48,Email envelope message
+Communication,message,message/16,message/20,message/24,message/32,message/48,Message chat bubble
+Communication,chat,chat/16,chat/20,chat/24,chat/32,chat/48,Chat conversation messaging
+Communication,phone,phone/16,phone/20,phone/24,phone/32,phone/48,Phone call contact
+Communication,bell,bell/16,bell/20,bell/24,bell/32,bell/48,Notifications alerts
+Communication,notification,notification/16,notification/20,notification/24,notification/32,notification/48,Alert notification badge
+Actions & Status,plus,plus/16,plus/20,plus/24,plus/32,plus/48,Add create new
+Actions & Status,minus,minus/16,minus/20,minus/24,minus/32,minus/48,Remove subtract collapse
+Actions & Status,edit,edit/16,edit/20,edit/24,edit/32,edit/48,Edit pencil modify
+Actions & Status,delete,delete/16,delete/20,delete/24,delete/32,delete/48,Delete remove X
+Actions & Status,trash,trash/16,trash/20,trash/24,trash/32,trash/48,Trash bin delete
+Actions & Status,save,save/16,save/20,save/24,save/32,save/48,Save floppy disk
+Actions & Status,download,download/16,download/20,download/24,download/32,download/48,Download arrow down
+Actions & Status,upload,upload/16,upload/20,upload/24,upload/32,upload/48,Upload arrow up
+Actions & Status,check,check/16,check/20,check/24,check/32,check/48,Checkmark confirm done
+Actions & Status,check-circle,check-circle/16,check-circle/20,check-circle/24,check-circle/32,check-circle/48,Success completed verified
+Actions & Status,x-circle,x-circle/16,x-circle/20,x-circle/24,x-circle/32,x-circle/48,Error failed close
+Actions & Status,info,info/16,info/20,info/24,info/32,info/48,Information help
+Actions & Status,alert-circle,alert-circle/16,alert-circle/20,alert-circle/24,alert-circle/32,alert-circle/48,Alert warning error
+Actions & Status,alert-triangle,alert-triangle/16,alert-triangle/20,alert-triangle/24,alert-triangle/32,alert-triangle/48,Warning caution
+Actions & Status,loading,loading/16,loading/20,loading/24,loading/32,loading/48,Loading spinner processing
+Actions & Status,refresh,refresh/16,refresh/20,refresh/24,refresh/32,refresh/48,Refresh reload sync
+Settings & Tools,settings,settings/16,settings/20,settings/24,settings/32,settings/48,Settings gear configuration
+Settings & Tools,filter,filter/16,filter/20,filter/24,filter/32,filter/48,Filter funnel sort
+Settings & Tools,calendar,calendar/16,calendar/20,calendar/24,calendar/32,calendar/48,Calendar date picker
+Settings & Tools,clock,clock/16,clock/20,clock/24,clock/32,clock/48,Time clock schedule
+Settings & Tools,map,map/16,map/20,map/24,map/32,map/48,Map location navigation
+Settings & Tools,location,location/16,location/20,location/24,location/32,location/48,Location pin marker GPS
+Settings & Tools,lock,lock/16,lock/20,lock/24,lock/32,lock/48,Locked secure private
+Settings & Tools,unlock,unlock/16,unlock/20,unlock/24,unlock/32,unlock/48,Unlocked open public
+Settings & Tools,eye,eye/16,eye/20,eye/24,eye/32,eye/48,View visible show
+Settings & Tools,eye-off,eye-off/16,eye-off/20,eye-off/24,eye-off/32,eye-off/48,Hide invisible password
+E-commerce & Business,shopping-cart,shopping-cart/16,shopping-cart/20,shopping-cart/24,shopping-cart/32,shopping-cart/48,Shopping cart checkout
+E-commerce & Business,shopping-bag,shopping-bag/16,shopping-bag/20,shopping-bag/24,shopping-bag/32,shopping-bag/48,Shopping bag purchase
+E-commerce & Business,credit-card,credit-card/16,credit-card/20,credit-card/24,credit-card/32,credit-card/48,Credit card payment
+E-commerce & Business,dollar,dollar/16,dollar/20,dollar/24,dollar/32,dollar/48,Money currency price
+E-commerce & Business,tag,tag/16,tag/20,tag/24,tag/32,tag/48,Tag label category
+E-commerce & Business,gift,gift/16,gift/20,gift/24,gift/32,gift/48,Gift present reward
+Social & Sharing,heart,heart/16,heart/20,heart/24,heart/32,heart/48,Like favorite love
+Social & Sharing,star,star/16,star/20,star/24,star/32,star/48,Star rating favorite
+Social & Sharing,share,share/16,share/20,share/24,share/32,share/48,Share export send
+Social & Sharing,bookmark,bookmark/16,bookmark/20,bookmark/24,bookmark/32,bookmark/48,Bookmark save for later
+Social & Sharing,thumbs-up,thumbs-up/16,thumbs-up/20,thumbs-up/24,thumbs-up/32,thumbs-up/48,Like approve positive
+Social & Sharing,thumbs-down,thumbs-down/16,thumbs-down/20,thumbs-down/24,thumbs-down/32,thumbs-down/48,Dislike disapprove negative
+Learning & Education,book,book/16,book/20,book/24,book/32,book/48,Book reading library
+Learning & Education,book-open,book-open/16,book-open/20,book-open/24,book-open/32,book-open/48,Open book reading
+Learning & Education,graduation-cap,graduation-cap/16,graduation-cap/20,graduation-cap/24,graduation-cap/32,graduation-cap/48,Education graduation learning
+Learning & Education,trophy,trophy/16,trophy/20,trophy/24,trophy/32,trophy/48,Trophy achievement award
+Learning & Education,target,target/16,target/20,target/24,target/32,target/48,Target goal objective
+Learning & Education,award,award/16,award/20,award/24,award/32,award/48,Award badge achievement
