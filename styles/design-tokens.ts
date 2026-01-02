@@ -56,6 +56,140 @@ export const colors = {
     950: '#000000',
   },
 
+  // Category Colors (from screenshot - Russian language learning app)
+  categories: {
+    // Terracotta - Cafe/Restaurant (Кафе/ресторан)
+    terracotta: {
+      50: '#fdf6f3',
+      100: '#fae8e0',
+      200: '#f5d1c1',
+      300: '#ebb094',
+      400: '#df8565',
+      500: '#c97959',
+      600: '#b35d42',
+      700: '#954937',
+      800: '#7a3d31',
+      900: '#66362c',
+    },
+    // Pink - Dating (Знакомства)
+    pink: {
+      50: '#fdf5f7',
+      100: '#fcedf1',
+      200: '#fad9e3',
+      300: '#f7bccf',
+      400: '#f192ae',
+      500: '#e8b4bc',
+      600: '#d68fa0',
+      700: '#b96d82',
+      800: '#9a5a6c',
+      900: '#824d5d',
+    },
+    // Navy/Teal - Work (Работа)
+    navy: {
+      50: '#f2f7f9',
+      100: '#e0ebf0',
+      200: '#c4d9e3',
+      300: '#9cbfcf',
+      400: '#6d9fb5',
+      500: '#2c4a5a',
+      600: '#23414f',
+      700: '#1d3542',
+      800: '#1a2d38',
+      900: '#19272f',
+    },
+    // Golden Yellow - Weather/Time (Погода/время)
+    golden: {
+      50: '#fdfaef',
+      100: '#fbf2d5',
+      200: '#f7e4a7',
+      300: '#f2d06f',
+      400: '#ecba45',
+      500: '#d4a548',
+      600: '#b88a2e',
+      700: '#966d27',
+      800: '#7d5826',
+      900: '#6a4924',
+    },
+    // Sage Green - Travel (Путешествия)
+    sage: {
+      50: '#f5f7f5',
+      100: '#e7ebe8',
+      200: '#d0d9d2',
+      300: '#adbdb1',
+      400: '#869d8d',
+      500: '#6b8373',
+      600: '#56695d',
+      700: '#46554c',
+      800: '#3b463f',
+      900: '#333c36',
+    },
+    // Mint Green - Politeness (Вежливость)
+    mint: {
+      50: '#f4f8f6',
+      100: '#e2ede7',
+      200: '#c6dccf',
+      300: '#a1c3af',
+      400: '#79a58a',
+      500: '#8fa989',
+      600: '#6e8a71',
+      700: '#5a6f5d',
+      800: '#4b5a4d',
+      900: '#3f4b41',
+    },
+    // Mustard Yellow - Daily Life (Быт)
+    mustard: {
+      50: '#fdfaeb',
+      100: '#fcf3c9',
+      200: '#f9e68e',
+      300: '#f6d353',
+      400: '#f3c129',
+      500: '#e8c468',
+      600: '#c99b1a',
+      700: '#a17217',
+      800: '#845a19',
+      900: '#6f4a1a',
+    },
+    // Muted Blue - Health (Здоровье)
+    blue: {
+      50: '#f3f7f9',
+      100: '#e1ebf0',
+      200: '#c6d9e3',
+      300: '#9fbfce',
+      400: '#729fb3',
+      500: '#5a7b8c',
+      600: '#4d6578',
+      700: '#425463',
+      800: '#3c4854',
+      900: '#353e48',
+    },
+    // Coral - Entertainment (Развлечения)
+    coral: {
+      50: '#fdf4f4',
+      100: '#fce8e8',
+      200: '#fad5d5',
+      300: '#f5b3b3',
+      400: '#ed8585',
+      500: '#c97777',
+      600: '#b05555',
+      700: '#934545',
+      800: '#7a3c3c',
+      900: '#673838',
+    },
+    // Burgundy - Icons/Special
+    burgundy: {
+      50: '#f9f5f5',
+      100: '#f2e9e9',
+      200: '#e6d5d5',
+      300: '#d3b4b4',
+      400: '#ba8888',
+      500: '#6b3a3a',
+      600: '#5e2f2f',
+      700: '#4e2727',
+      800: '#432323',
+      900: '#3c2121',
+    },
+  },
+
   // Semantic Colors
   semantic: {
     success: {
@@ -311,5 +445,8 @@ export const designTokens = {
   zIndex,
   transitions,
 } as const;
+
+// Export categories separately for easy access
+export const categoryColors = colors.categories;
 
 export default designTokens;

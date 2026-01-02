@@ -17,6 +17,17 @@ const config: Config = {
         warning: designTokens.colors.semantic.warning,
         error: designTokens.colors.semantic.error,
         info: designTokens.colors.semantic.info,
+        // Category colors from screenshot
+        terracotta: designTokens.colors.categories.terracotta,
+        pink: designTokens.colors.categories.pink,
+        navy: designTokens.colors.categories.navy,
+        golden: designTokens.colors.categories.golden,
+        sage: designTokens.colors.categories.sage,
+        mint: designTokens.colors.categories.mint,
+        mustard: designTokens.colors.categories.mustard,
+        blue: designTokens.colors.categories.blue,
+        coral: designTokens.colors.categories.coral,
+        burgundy: designTokens.colors.categories.burgundy,
       },
       fontFamily: {
         sans: designTokens.typography.fontFamily.sans,
