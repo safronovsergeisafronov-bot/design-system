@@ -1,0 +1,2566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Worlex Design System - Comprehensive design tokens and visual style guide">
+    <title>Worlex Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        @font-face {
+            font-family: 'SF UI Display';
+            src: local('SF UI Display'), local('-apple-system'), local('BlinkMacSystemFont');
+            font-weight: 100 900;
+            font-style: normal;
+        }
+    </style>
+
+    <style>
+        /* ============================================================================
+           DESIGN TOKENS AS CSS CUSTOM PROPERTIES
+           Source: /styles/design-tokens.ts
+           Last updated: 2026-01-02
+
+           To update: Extract values from design-tokens.ts and update the variables below
+           ============================================================================ */
+
+        :root {
+            /* Primary Colors (Deep Red) */
+            --primary-50: #fef2f2;
+            --primary-100: #fee2e2;
+            --primary-200: #fecaca;
+            --primary-300: #fca5a5;
+            --primary-400: #f87171;
+            --primary-500: #801C1E;
+            --primary-600: #6b1719;
+            --primary-700: #5a1315;
+            --primary-800: #450f11;
+            --primary-900: #3a0d0e;
+            --primary-950: #2a0909;
+
+            /* Secondary Colors (Green) */
+            --secondary-50: #ebffee;
+            --secondary-100: #cff7d3;
+            --secondary-200: #aff4c6;
+            --secondary-300: #14ae5c;
+            --secondary-400: #009951;
+            --secondary-500: #02542d;
+            --secondary-600: #014022;
+            --secondary-700: #014022;
+            --secondary-800: #014022;
+            --secondary-900: #014022;
+            --secondary-950: #014022;
+
+            /* Neutral Colors */
+            --neutral-50: #ffffff;
+            --neutral-100: #f5f5f5;
+            --neutral-200: #f2f2f2;
+            --neutral-300: #e6e6e6;
+            --neutral-400: #d9d9d9;
+            --neutral-500: #b3b3b3;
+            --neutral-600: #767676;
+            --neutral-700: #5a5a5a;
+            --neutral-800: #444444;
+            --neutral-900: #111111;
+            --neutral-950: #000000;
+
+            /* Semantic Colors - Success */
+            --success-50: #ebffee;
+            --success-100: #cff7d3;
+            --success-200: #aff4c6;
+            --success-300: #14ae5c;
+            --success-400: #009951;
+            --success-500: #02542d;
+
+            /* Semantic Colors - Warning */
+            --warning-50: #fffbeb;
+            --warning-100: #fff1c2;
+            --warning-200: #e8b931;
+            --warning-300: #e5a000;
+            --warning-400: #bf6a02;
+            --warning-500: #975101;
+
+            /* Semantic Colors - Error */
+            --error-50: #fde8e7;
+            --error-100: #fdd2cf;
+            --error-200: #fcb2ad;
+            --error-300: #eb221e;
+            --error-400: #bf0f0c;
+            --error-500: #8f0b09;
+
+            /* Semantic Colors - Info */
+            --info-500: #fae1fa;
+
+            /* Background Colors */
+            --bg-paper: #FDFBF4;
+            --bg-white: #FFFFFF;
+
+            /* Card Colors */
+            --card-cafe: #B85C38;
+            --card-dating: #E6B0AA;
+            --card-work: #264653;
+            --card-weather: #E0B043;
+            --card-travel: #5C7C5B;
+            --card-etiquette: #7A9E7E;
+            --card-lifestyle: #E9C46A;
+            --card-health: #5B7C8C;
+            --card-entertainment: #C85C5C;
+            --card-cta: #801C1E;
+            --card-chip-overlay: rgba(255, 255, 255, 0.25);
+
+            /* Typography */
+            --font-sans: 'SF UI Display', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            --font-secondary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-mono: 'Roboto Mono', Consolas, Monaco, 'Courier New', monospace;
+
+            /* Font Sizes */
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2rem;
+            --text-5xl: 3rem;
+            --text-6xl: 3.75rem;
+            --text-7xl: 4.5rem;
+
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+            --space-24: 6rem;
+
+            /* Border Radius */
+            --radius-sm: 0.125rem;
+            --radius-base: 0.25rem;
+            --radius-md: 0.375rem;
+            --radius-lg: 0.5rem;
+            --radius-xl: 0.75rem;
+            --radius-2xl: 1rem;
+            --radius-3xl: 1.5rem;
+            --radius-full: 9999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ============================================================================
+           DARK MODE SUPPORT
+           ============================================================================ */
+
+        [data-theme="dark"] {
+            --primary-50: #2a0909;
+            --primary-100: #3a0d0e;
+            --primary-200: #450f11;
+            --primary-300: #5a1315;
+            --primary-400: #6b1719;
+            --primary-500: #801C1E;
+            --primary-600: #f87171;
+            --primary-700: #fca5a5;
+            --primary-800: #fecaca;
+            --primary-900: #fee2e2;
+            --primary-950: #fef2f2;
+
+            --neutral-50: #000000;
+            --neutral-100: #111111;
+            --neutral-200: #1a1a1a;
+            --neutral-300: #2a2a2a;
+            --neutral-400: #3a3a3a;
+            --neutral-500: #5a5a5a;
+            --neutral-600: #999999;
+            --neutral-700: #b3b3b3;
+            --neutral-800: #d9d9d9;
+            --neutral-900: #f5f5f5;
+            --neutral-950: #ffffff;
+
+            --bg-paper: #0a0a0a;
+            --bg-white: #1a1a1a;
+
+            --success-50: #014022;
+            --success-500: #14ae5c;
+
+            --warning-50: #401b00;
+            --warning-500: #e8b931;
+
+            --error-50: #3a0000;
+            --error-500: #eb221e;
+        }
+
+        /* ============================================================================
+           GLOBAL STYLES
+           ============================================================================ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            line-height: 1.4;
+            color: var(--neutral-900);
+            background-color: var(--neutral-50);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        h1 { font-size: var(--text-5xl); letter-spacing: -0.02em; }
+        h2 { font-size: var(--text-4xl); letter-spacing: -0.01em; }
+        h3 { font-size: var(--text-2xl); }
+        h4 { font-size: var(--text-xl); }
+
+        p {
+            margin-bottom: var(--space-4);
+        }
+
+        a {
+            color: var(--primary-500);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--primary-700);
+        }
+
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.875em;
+            background-color: var(--neutral-100);
+            padding: 0.125rem 0.375rem;
+            border-radius: var(--radius-base);
+        }
+
+        /* ============================================================================
+           LAYOUT
+           ============================================================================ */
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--space-6);
+        }
+
+        .section {
+            padding: var(--space-16) 0;
+        }
+
+        .section-header {
+            margin-bottom: var(--space-12);
+        }
+
+        .section-title {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-3);
+        }
+
+        .section-description {
+            font-size: var(--text-lg);
+            color: var(--neutral-700);
+        }
+
+        /* ============================================================================
+           NAVIGATION
+           ============================================================================ */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: var(--neutral-50);
+            border-bottom: 1px solid var(--neutral-200);
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: var(--space-4);
+            padding-bottom: var(--space-4);
+        }
+
+        .navbar-brand {
+            font-size: var(--text-xl);
+            font-weight: 700;
+            color: var(--neutral-900);
+        }
+
+        .navbar-nav {
+            display: flex;
+            gap: var(--space-6);
+            list-style: none;
+        }
+
+        .navbar-nav a {
+            color: var(--neutral-700);
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+
+        .navbar-nav a:hover {
+            color: var(--primary-500);
+        }
+
+        /* ============================================================================
+           HERO SECTION
+           ============================================================================ */
+
+        .hero {
+            padding: var(--space-24) 0;
+            text-align: center;
+            background: linear-gradient(to bottom, var(--neutral-50), var(--neutral-100));
+        }
+
+        .hero-title {
+            font-size: var(--text-7xl);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--neutral-900);
+            margin-bottom: var(--space-6);
+        }
+
+        .hero-subtitle {
+            font-size: var(--text-2xl);
+            color: var(--neutral-700);
+            margin-bottom: var(--space-8);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+            justify-content: center;
+            margin-bottom: var(--space-10);
+        }
+
+        .feature-badge {
+            background-color: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            color: var(--neutral-700);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================================================
+           BUTTONS
+           ============================================================================ */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-3) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-size: var(--text-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            text-decoration: none;
+            border: none;
+            font-family: var(--font-sans);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-500);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-600);
+            box-shadow: var(--shadow-md);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: var(--secondary-500);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-600);
+            box-shadow: var(--shadow-md);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--neutral-900);
+            border: 2px solid var(--neutral-300);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--neutral-100);
+            border-color: var(--neutral-400);
+            color: var(--neutral-900);
+        }
+
+        /* ============================================================================
+           COLOR SWATCHES
+           ============================================================================ */
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-8);
+        }
+
+        .color-palette {
+            background: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .palette-name {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-4);
+            color: var(--neutral-900);
+        }
+
+        .color-swatch {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-2);
+            cursor: pointer;
+            transition: transform var(--transition-fast);
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.02);
+        }
+
+        .color-preview {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            flex-shrink: 0;
+        }
+
+        .color-info {
+            flex: 1;
+            margin-left: var(--space-3);
+        }
+
+        .color-name {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--neutral-800);
+        }
+
+        .color-value {
+            font-size: var(--text-xs);
+            font-family: var(--font-mono);
+            color: var(--neutral-600);
+        }
+
+        /* ============================================================================
+           TYPOGRAPHY SHOWCASE
+           ============================================================================ */
+
+        .typography-grid {
+            display: grid;
+            gap: var(--space-8);
+            margin-top: var(--space-8);
+        }
+
+        .typography-section {
+            background: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+        }
+
+        .typography-section h4 {
+            font-size: var(--text-lg);
+            color: var(--neutral-800);
+            margin-bottom: var(--space-4);
+            font-weight: 600;
+        }
+
+        .font-size-demo {
+            margin-bottom: var(--space-6);
+            padding: var(--space-4);
+            border-left: 3px solid var(--primary-500);
+            background: var(--neutral-100);
+            border-radius: var(--radius-base);
+        }
+
+        .font-size-label {
+            font-size: var(--text-xs);
+            font-family: var(--font-mono);
+            color: var(--neutral-600);
+            margin-bottom: var(--space-2);
+            display: block;
+        }
+
+        .font-weight-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-4);
+        }
+
+        .weight-sample {
+            padding: var(--space-3);
+            background: var(--neutral-100);
+            border-radius: var(--radius-md);
+        }
+
+        /* ============================================================================
+           SPACING SHOWCASE
+           ============================================================================ */
+
+        .spacing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .spacing-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-4);
+            background: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-md);
+        }
+
+        .spacing-visual {
+            background: var(--primary-500);
+            border-radius: var(--radius-sm);
+        }
+
+        .spacing-label {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--neutral-700);
+        }
+
+        /* ============================================================================
+           COMPONENT EXAMPLES
+           ============================================================================ */
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-8);
+        }
+
+        .card {
+            background: var(--neutral-50);
+            border: 1px solid var(--neutral-200);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            transition: all var(--transition-base);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: var(--space-3);
+        }
+
+        .card-content {
+            color: var(--neutral-700);
+            margin-bottom: var(--space-4);
+        }
+
+        /* ============================================================================
+           FOOTER
+           ============================================================================ */
+
+        .footer {
+            background-color: var(--neutral-900);
+            color: var(--neutral-300);
+            padding: var(--space-16) 0 var(--space-8) 0;
+            margin-top: var(--space-24);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-8);
+            margin-bottom: var(--space-8);
+        }
+
+        .footer-section h4 {
+            color: var(--neutral-50);
+            margin-bottom: var(--space-4);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-2);
+        }
+
+        .footer-links a {
+            color: var(--neutral-400);
+        }
+
+        .footer-links a:hover {
+            color: var(--neutral-50);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--neutral-800);
+            padding-top: var(--space-6);
+            text-align: center;
+            color: var(--neutral-500);
+        }
+
+        /* ============================================================================
+           RESPONSIVE DESIGN
+           ============================================================================ */
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: var(--text-5xl);
+            }
+
+            .navbar-nav {
+                display: none;
+            }
+
+            .color-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: var(--text-4xl);
+            }
+
+            .hero-subtitle {
+                font-size: var(--text-lg);
+            }
+
+            .section-title {
+                font-size: var(--text-2xl);
+            }
+        }
+
+        /* ============================================================================
+           UTILITY CLASSES
+           ============================================================================ */
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-8 {
+            margin-top: var(--space-8);
+        }
+
+        .mb-4 {
+            margin-bottom: var(--space-4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">Worlex Design System</a>
+            <ul class="navbar-nav">
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#spacing">Spacing</a></li>
+                <li><a href="#icons">Icons (287)</a></li>
+                <li>
+                    <a href="#components" style="position: relative; display: inline-flex; align-items: center; gap: 4px;">
+                        Components
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                </li>
+                <li><a href="#getting-started">Get Started</a></li>
+                <li>
+                    <button id="theme-toggle" onclick="toggleTheme()" style="background: none; border: 2px solid var(--neutral-300); border-radius: var(--radius-full); padding: 8px 12px; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: var(--text-sm); font-weight: 600; color: var(--neutral-900); transition: all var(--transition-normal);">
+                        <svg id="theme-icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg id="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                        <span id="theme-text">Dark</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Worlex Design System</h1>
+            <p class="hero-subtitle">A comprehensive design system with design tokens and visual components built with Next.js and Tailwind CSS</p>
+
+            <div class="hero-features">
+                <span class="feature-badge">Complete Design Token System</span>
+                <span class="feature-badge">Typography Scale</span>
+                <span class="feature-badge">Color Palette</span>
+                <span class="feature-badge">Spacing Scale</span>
+                <span class="feature-badge">Visual Style Guide</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="https://github.com/safronovsergeisafronov-bot/design-system" class="btn btn-primary" target="_blank">View on GitHub</a>
+                <a href="https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System" class="btn btn-secondary" target="_blank">Figma Design</a>
+                <a href="#colors" class="btn btn-outline">Explore Design System</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section id="colors" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Colors</h2>
+                <p class="section-description">Complete color palette including primary, secondary, neutral, and semantic colors</p>
+            </div>
+
+            <div class="color-grid">
+                <!-- Primary Colors -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Primary (Deep Red)</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#fef2f2')">
+                        <div class="color-preview" style="background-color: #fef2f2;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50</div>
+                            <div class="color-value">#fef2f2</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#fee2e2')">
+                        <div class="color-preview" style="background-color: #fee2e2;"></div>
+                        <div class="color-info">
+                            <div class="color-name">100</div>
+                            <div class="color-value">#fee2e2</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#fca5a5')">
+                        <div class="color-preview" style="background-color: #fca5a5;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#fca5a5</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#f87171')">
+                        <div class="color-preview" style="background-color: #f87171;"></div>
+                        <div class="color-info">
+                            <div class="color-name">400</div>
+                            <div class="color-value">#f87171</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#801C1E')">
+                        <div class="color-preview" style="background-color: #801C1E;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 (Main)</div>
+                            <div class="color-value">#801C1E</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#6b1719')">
+                        <div class="color-preview" style="background-color: #6b1719;"></div>
+                        <div class="color-info">
+                            <div class="color-name">600</div>
+                            <div class="color-value">#6b1719</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#5a1315')">
+                        <div class="color-preview" style="background-color: #5a1315;"></div>
+                        <div class="color-info">
+                            <div class="color-name">700</div>
+                            <div class="color-value">#5a1315</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#3a0d0e')">
+                        <div class="color-preview" style="background-color: #3a0d0e;"></div>
+                        <div class="color-info">
+                            <div class="color-name">900</div>
+                            <div class="color-value">#3a0d0e</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secondary Colors -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Secondary (Green)</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#ebffee')">
+                        <div class="color-preview" style="background-color: #ebffee;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50</div>
+                            <div class="color-value">#ebffee</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#cff7d3')">
+                        <div class="color-preview" style="background-color: #cff7d3;"></div>
+                        <div class="color-info">
+                            <div class="color-name">100</div>
+                            <div class="color-value">#cff7d3</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#aff4c6')">
+                        <div class="color-preview" style="background-color: #aff4c6;"></div>
+                        <div class="color-info">
+                            <div class="color-name">200</div>
+                            <div class="color-value">#aff4c6</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#14ae5c')">
+                        <div class="color-preview" style="background-color: #14ae5c;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#14ae5c</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#009951')">
+                        <div class="color-preview" style="background-color: #009951;"></div>
+                        <div class="color-info">
+                            <div class="color-name">400</div>
+                            <div class="color-value">#009951</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#02542d')">
+                        <div class="color-preview" style="background-color: #02542d;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 (Main)</div>
+                            <div class="color-value">#02542d</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#014022')">
+                        <div class="color-preview" style="background-color: #014022;"></div>
+                        <div class="color-info">
+                            <div class="color-name">600</div>
+                            <div class="color-value">#014022</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neutral Colors -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Neutral (Grayscale)</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#ffffff')">
+                        <div class="color-preview" style="background-color: #ffffff;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50 (White)</div>
+                            <div class="color-value">#ffffff</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#f5f5f5')">
+                        <div class="color-preview" style="background-color: #f5f5f5;"></div>
+                        <div class="color-info">
+                            <div class="color-name">100</div>
+                            <div class="color-value">#f5f5f5</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#e6e6e6')">
+                        <div class="color-preview" style="background-color: #e6e6e6;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#e6e6e6</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#b3b3b3')">
+                        <div class="color-preview" style="background-color: #b3b3b3;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500</div>
+                            <div class="color-value">#b3b3b3</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#767676')">
+                        <div class="color-preview" style="background-color: #767676;"></div>
+                        <div class="color-info">
+                            <div class="color-name">600</div>
+                            <div class="color-value">#767676</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#444444')">
+                        <div class="color-preview" style="background-color: #444444;"></div>
+                        <div class="color-info">
+                            <div class="color-name">800</div>
+                            <div class="color-value">#444444</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#111111')">
+                        <div class="color-preview" style="background-color: #111111;"></div>
+                        <div class="color-info">
+                            <div class="color-name">900 (Text)</div>
+                            <div class="color-value">#111111</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#000000')">
+                        <div class="color-preview" style="background-color: #000000;"></div>
+                        <div class="color-info">
+                            <div class="color-name">950 (Black)</div>
+                            <div class="color-value">#000000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semantic - Success -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Success</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#ebffee')">
+                        <div class="color-preview" style="background-color: #ebffee;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50</div>
+                            <div class="color-value">#ebffee</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#14ae5c')">
+                        <div class="color-preview" style="background-color: #14ae5c;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#14ae5c</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#02542d')">
+                        <div class="color-preview" style="background-color: #02542d;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 (Main)</div>
+                            <div class="color-value">#02542d</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semantic - Warning -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Warning</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#fffbeb')">
+                        <div class="color-preview" style="background-color: #fffbeb;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50</div>
+                            <div class="color-value">#fffbeb</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#e5a000')">
+                        <div class="color-preview" style="background-color: #e5a000;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#e5a000</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#975101')">
+                        <div class="color-preview" style="background-color: #975101;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 (Main)</div>
+                            <div class="color-value">#975101</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semantic - Error -->
+                <div class="color-palette">
+                    <h3 class="palette-name">Error</h3>
+                    <div class="color-swatch" onclick="copyToClipboard('#fde8e7')">
+                        <div class="color-preview" style="background-color: #fde8e7;"></div>
+                        <div class="color-info">
+                            <div class="color-name">50</div>
+                            <div class="color-value">#fde8e7</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#eb221e')">
+                        <div class="color-preview" style="background-color: #eb221e;"></div>
+                        <div class="color-info">
+                            <div class="color-name">300</div>
+                            <div class="color-value">#eb221e</div>
+                        </div>
+                    </div>
+                    <div class="color-swatch" onclick="copyToClipboard('#8f0b09')">
+                        <div class="color-preview" style="background-color: #8f0b09;"></div>
+                        <div class="color-info">
+                            <div class="color-name">500 (Main)</div>
+                            <div class="color-value">#8f0b09</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Colors Section -->
+            <div style="margin-top: var(--space-16);">
+                <h3 class="section-title" style="font-size: var(--text-3xl); margin-bottom: var(--space-8);">Card & Category Colors</h3>
+                <p class="section-description" style="margin-bottom: var(--space-8);">Specialized color palette for different card types and categories</p>
+
+                <div class="color-grid">
+                    <!-- Background Colors -->
+                    <div class="color-palette">
+                        <h3 class="palette-name">Backgrounds</h3>
+                        <div class="color-swatch" onclick="copyToClipboard('#FDFBF4')">
+                            <div class="color-preview" style="background-color: #FDFBF4;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Paper</div>
+                                <div class="color-value">#FDFBF4</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#FFFFFF')">
+                            <div class="color-preview" style="background-color: #FFFFFF; border: 1px solid #e6e6e6;"></div>
+                            <div class="color-info">
+                                <div class="color-name">White</div>
+                                <div class="color-value">#FFFFFF</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Cards 1 -->
+                    <div class="color-palette">
+                        <h3 class="palette-name">Categories 1</h3>
+                        <div class="color-swatch" onclick="copyToClipboard('#B85C38')">
+                            <div class="color-preview" style="background-color: #B85C38;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Café/Restaurant</div>
+                                <div class="color-value">#B85C38</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#E6B0AA')">
+                            <div class="color-preview" style="background-color: #E6B0AA;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Dating</div>
+                                <div class="color-value">#E6B0AA</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#264653')">
+                            <div class="color-preview" style="background-color: #264653;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Work</div>
+                                <div class="color-value">#264653</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#E0B043')">
+                            <div class="color-preview" style="background-color: #E0B043;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Weather</div>
+                                <div class="color-value">#E0B043</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Cards 2 -->
+                    <div class="color-palette">
+                        <h3 class="palette-name">Categories 2</h3>
+                        <div class="color-swatch" onclick="copyToClipboard('#5C7C5B')">
+                            <div class="color-preview" style="background-color: #5C7C5B;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Travel</div>
+                                <div class="color-value">#5C7C5B</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#7A9E7E')">
+                            <div class="color-preview" style="background-color: #7A9E7E;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Etiquette</div>
+                                <div class="color-value">#7A9E7E</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#E9C46A')">
+                            <div class="color-preview" style="background-color: #E9C46A;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Lifestyle</div>
+                                <div class="color-value">#E9C46A</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#5B7C8C')">
+                            <div class="color-preview" style="background-color: #5B7C8C;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Health</div>
+                                <div class="color-value">#5B7C8C</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Cards 3 -->
+                    <div class="color-palette">
+                        <h3 class="palette-name">Accent Cards</h3>
+                        <div class="color-swatch" onclick="copyToClipboard('#C85C5C')">
+                            <div class="color-preview" style="background-color: #C85C5C;"></div>
+                            <div class="color-info">
+                                <div class="color-name">Entertainment</div>
+                                <div class="color-value">#C85C5C</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" onclick="copyToClipboard('#801C1E')">
+                            <div class="color-preview" style="background-color: #801C1E;"></div>
+                            <div class="color-info">
+                                <div class="color-name">CTA Card</div>
+                                <div class="color-value">#801C1E</div>
+                            </div>
+                        </div>
+                        <div class="color-swatch" style="background: linear-gradient(135deg, #264653 0%, rgba(255,255,255,0.25) 100%);">
+                            <div class="color-preview" style="background-color: #264653; position: relative;">
+                                <div style="position: absolute; inset: 0; background: rgba(255, 255, 255, 0.25); border-radius: var(--radius-md);"></div>
+                            </div>
+                            <div class="color-info">
+                                <div class="color-name">Chip Overlay</div>
+                                <div class="color-value">rgba(255,255,255,0.25)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Examples -->
+                <div style="margin-top: var(--space-12);">
+                    <h4 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-6);">Card Examples</h4>
+                    <div class="component-grid">
+                        <div class="card" style="background-color: #B85C38; color: white; border: none;">
+                            <div class="card-title" style="color: white;">Café</div>
+                            <div class="card-content" style="color: rgba(255,255,255,0.9);">Warm terracotta for restaurant cards</div>
+                            <div style="display: inline-block; background: rgba(255,255,255,0.25); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); margin-top: var(--space-2);">Chip example</div>
+                        </div>
+                        <div class="card" style="background-color: #264653; color: white; border: none;">
+                            <div class="card-title" style="color: white;">Work</div>
+                            <div class="card-content" style="color: rgba(255,255,255,0.9);">Dark teal anchor color for professional content</div>
+                            <div style="display: inline-block; background: rgba(255,255,255,0.25); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); margin-top: var(--space-2);">Chip example</div>
+                        </div>
+                        <div class="card" style="background-color: #E0B043; color: var(--neutral-900); border: none;">
+                            <div class="card-title">Weather</div>
+                            <div class="card-content">Mustard yellow for weather and time cards</div>
+                            <div style="display: inline-block; background: rgba(255,255,255,0.25); padding: var(--space-2) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); margin-top: var(--space-2);">Chip example</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section id="typography" class="section" style="background-color: var(--neutral-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Typography</h2>
+                <p class="section-description">Font families, sizes, weights, and hierarchy</p>
+            </div>
+
+            <div class="typography-grid">
+                <!-- Font Sizes -->
+                <div class="typography-section">
+                    <h4>Font Sizes</h4>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Title Hero - 72px / 4.5rem</span>
+                        <div style="font-size: var(--text-7xl); font-weight: 700; letter-spacing: -0.03em;">The quick brown fox</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Title Page - 48px / 3rem</span>
+                        <div style="font-size: var(--text-5xl); font-weight: 700; letter-spacing: -0.02em;">The quick brown fox jumps</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Heading - 24px / 1.5rem</span>
+                        <div style="font-size: var(--text-2xl); font-weight: 600;">The quick brown fox jumps over the lazy dog</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Body Base - 16px / 1rem</span>
+                        <div style="font-size: var(--text-base);">The quick brown fox jumps over the lazy dog. This is the default body text size.</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Body Small - 14px / 0.875rem</span>
+                        <div style="font-size: var(--text-sm);">The quick brown fox jumps over the lazy dog. This is small text for captions and labels.</div>
+                    </div>
+                </div>
+
+                <!-- Font Weights -->
+                <div class="typography-section">
+                    <h4>Font Weights</h4>
+                    <div class="font-weight-demo">
+                        <div class="weight-sample">
+                            <div style="font-weight: 300;">Light (300)</div>
+                        </div>
+                        <div class="weight-sample">
+                            <div style="font-weight: 400;">Normal (400)</div>
+                        </div>
+                        <div class="weight-sample">
+                            <div style="font-weight: 500;">Medium (500)</div>
+                        </div>
+                        <div class="weight-sample">
+                            <div style="font-weight: 600;">Semibold (600)</div>
+                        </div>
+                        <div class="weight-sample">
+                            <div style="font-weight: 700;">Bold (700)</div>
+                        </div>
+                        <div class="weight-sample">
+                            <div style="font-weight: 800;">Extra Bold (800)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Font Families -->
+                <div class="typography-section">
+                    <h4>Font Families</h4>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Primary (SF UI Display) - Headings & Body</span>
+                        <div style="font-family: var(--font-sans); font-size: var(--text-xl); font-weight: 700;">The quick brown fox jumps over the lazy dog</div>
+                        <div style="font-family: var(--font-sans); font-size: var(--text-base); margin-top: var(--space-2);">Regular body text using SF UI Display</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Secondary (Inter) - Supplementary Text</span>
+                        <div style="font-family: var(--font-secondary); font-size: var(--text-base);">The quick brown fox jumps over the lazy dog</div>
+                    </div>
+                    <div class="font-size-demo">
+                        <span class="font-size-label">Mono (Roboto Mono) - Code</span>
+                        <div style="font-family: var(--font-mono); font-size: var(--text-base);">const greeting = "Hello, World!";</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section id="spacing" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Spacing Scale</h2>
+                <p class="section-description">Consistent spacing system following Tailwind conventions</p>
+            </div>
+
+            <div class="spacing-grid">
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 0.25rem; height: 2rem;"></div>
+                    <div class="spacing-label">1 = 4px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 0.5rem; height: 2rem;"></div>
+                    <div class="spacing-label">2 = 8px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 0.75rem; height: 2rem;"></div>
+                    <div class="spacing-label">3 = 12px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 1rem; height: 2rem;"></div>
+                    <div class="spacing-label">4 = 16px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 1.5rem; height: 2rem;"></div>
+                    <div class="spacing-label">6 = 24px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 2rem; height: 2rem;"></div>
+                    <div class="spacing-label">8 = 32px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 3rem; height: 2rem;"></div>
+                    <div class="spacing-label">12 = 48px</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 4rem; height: 2rem;"></div>
+                    <div class="spacing-label">16 = 64px</div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="mb-4">Border Radius Examples</h4>
+                <div class="spacing-grid">
+                    <div class="spacing-item" style="border-radius: var(--radius-sm);">
+                        <div class="spacing-label">Small (2px)</div>
+                    </div>
+                    <div class="spacing-item" style="border-radius: var(--radius-md);">
+                        <div class="spacing-label">Medium (6px)</div>
+                    </div>
+                    <div class="spacing-item" style="border-radius: var(--radius-lg);">
+                        <div class="spacing-label">Large (8px)</div>
+                    </div>
+                    <div class="spacing-item" style="border-radius: var(--radius-xl);">
+                        <div class="spacing-label">XL (12px)</div>
+                    </div>
+                    <div class="spacing-item" style="border-radius: var(--radius-2xl);">
+                        <div class="spacing-label">2XL (16px)</div>
+                    </div>
+                    <div class="spacing-item" style="border-radius: var(--radius-full); padding: var(--space-4) var(--space-6);">
+                        <div class="spacing-label">Full (pill)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="mb-4">Shadow Levels</h4>
+                <div class="component-grid">
+                    <div class="card" style="box-shadow: var(--shadow-sm);">
+                        <div class="card-title">Small Shadow</div>
+                        <div class="card-content">Subtle elevation for minimal depth</div>
+                    </div>
+                    <div class="card" style="box-shadow: var(--shadow-md);">
+                        <div class="card-title">Medium Shadow</div>
+                        <div class="card-content">Standard elevation for cards</div>
+                    </div>
+                    <div class="card" style="box-shadow: var(--shadow-lg);">
+                        <div class="card-title">Large Shadow</div>
+                        <div class="card-content">Prominent elevation for modals</div>
+                    </div>
+                    <div class="card" style="box-shadow: var(--shadow-2xl);">
+                        <div class="card-title">2XL Shadow</div>
+                        <div class="card-content">Maximum elevation for emphasis</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakpoints Section -->
+            <div class="mt-8">
+                <h4 class="mb-4">Responsive Breakpoints</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-6);">Screen size breakpoints for responsive design</p>
+                <div class="component-grid">
+                    <div class="card">
+                        <div class="card-title">XS - Extra Small</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">320px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Mobile devices (portrait)</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">SM - Small</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">480px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Mobile devices (landscape)</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">MD - Medium</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">768px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Tablets</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">LG - Large</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">1024px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Small laptops</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">XL - Extra Large</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">1280px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Desktops</div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">2XL - 2X Large</div>
+                        <div class="card-content" style="font-family: var(--font-mono); color: var(--primary-500);">1536px</div>
+                        <div style="color: var(--neutral-600); font-size: var(--text-sm);">Large screens</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Section -->
+    <section id="components" class="section" style="background-color: var(--neutral-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Component Examples</h2>
+                <p class="section-description">Real-world components using the design system</p>
+            </div>
+
+            <div class="mt-8">
+                <h4 class="mb-4">Buttons</h4>
+                <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+                    <button class="btn btn-primary">Primary Button</button>
+                    <button class="btn btn-secondary">Secondary Button</button>
+                    <button class="btn btn-outline">Outline Button</button>
+                </div>
+            </div>
+
+            <!-- Forms & Inputs -->
+            <div class="mt-8">
+                <h4 class="mb-4">Forms & Inputs</h4>
+                <div class="component-grid">
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Text Input</h4>
+                        <input type="text" placeholder="Enter text..." style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); transition: all var(--transition-fast);">
+                        <input type="text" placeholder="Focus state" style="width: 100%; padding: var(--space-3); border: 2px solid var(--primary-500); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); margin-top: var(--space-3); outline: none; box-shadow: 0 0 0 3px rgba(128, 28, 30, 0.1);">
+                        <input type="text" placeholder="Disabled" disabled style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-200); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); margin-top: var(--space-3); background: var(--neutral-100); color: var(--neutral-500); cursor: not-allowed;">
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Textarea</h4>
+                        <textarea placeholder="Enter message..." rows="4" style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base); resize: vertical;"></textarea>
+                        <h4 style="margin: var(--space-4) 0;">Select</h4>
+                        <select style="width: 100%; padding: var(--space-3); border: 1px solid var(--neutral-300); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-base);">
+                            <option>Choose option...</option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                        </select>
+                    </div>
+                    <div class="card">
+                        <h4 style="margin-bottom: var(--space-4);">Checkboxes & Radio</h4>
+                        <div style="margin-bottom: var(--space-3);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Checkbox option 1</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom: var(--space-4);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" checked style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Checkbox option 2</span>
+                            </label>
+                        </div>
+                        <div style="margin-bottom: var(--space-3);">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="radio" style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Radio option 1</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="radio" name="radio" checked style="width: 18px; height: 18px; margin-right: var(--space-2); accent-color: var(--primary-500);">
+                                <span>Radio option 2</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Badges & Chips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Badges & Chips</h4>
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center;">
+                    <span style="display: inline-block; background: var(--primary-500); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Primary Badge</span>
+                    <span style="display: inline-block; background: var(--secondary-500); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Secondary Badge</span>
+                    <span style="display: inline-block; background: var(--success-300); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Success</span>
+                    <span style="display: inline-block; background: var(--warning-300); color: var(--neutral-900); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Warning</span>
+                    <span style="display: inline-block; background: var(--error-300); color: white; padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Error</span>
+                    <span style="display: inline-block; background: var(--neutral-200); color: var(--neutral-900); padding: var(--space-1) var(--space-3); border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 600;">Neutral</span>
+                    <span style="display: inline-flex; align-items: center; background: var(--primary-100); color: var(--primary-700); padding: var(--space-2) var(--space-3); border-radius: var(--radius-lg); font-size: var(--text-sm); font-weight: 500; border: 1px solid var(--primary-300);">
+                        <span>Chip with close</span>
+                        <button style="background: none; border: none; margin-left: var(--space-2); cursor: pointer; color: var(--primary-700); font-weight: bold;">×</button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Alerts & Notifications -->
+            <div class="mt-8">
+                <h4 class="mb-4">Alerts & Notifications</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="padding: var(--space-4); background: var(--success-50); border-left: 4px solid var(--success-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--success-500); margin-bottom: var(--space-1);">Success</div>
+                        <div style="color: var(--success-500); font-size: var(--text-sm);">Your changes have been saved successfully!</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--warning-50); border-left: 4px solid var(--warning-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--warning-500); margin-bottom: var(--space-1);">Warning</div>
+                        <div style="color: var(--warning-500); font-size: var(--text-sm);">Please review your information before proceeding.</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--error-50); border-left: 4px solid var(--error-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--error-500); margin-bottom: var(--space-1);">Error</div>
+                        <div style="color: var(--error-500); font-size: var(--text-sm);">An error occurred while processing your request.</div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--neutral-100); border-left: 4px solid var(--neutral-400); border-radius: var(--radius-md);">
+                        <div style="font-weight: 600; color: var(--neutral-800); margin-bottom: var(--space-1);">Info</div>
+                        <div style="color: var(--neutral-700); font-size: var(--text-sm);">This is an informational message for your reference.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Icon Library -->
+            <div class="mt-8" id="icons">
+                <h4 class="mb-4">Icon Library</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-4); font-size: var(--text-sm);">
+                    Complete icon set for the Worlex design system powered by <strong>Feather Icons</strong>.
+                    <strong>287 icons</strong> available in 6 sizes: 16px, 20px, 24px, 32px, 40px, and 48px.
+                </p>
+                <div style="display: flex; gap: var(--space-3); margin-bottom: var(--space-6); flex-wrap: wrap;">
+                    <a href="https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9328" target="_blank" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none;">
+                        <span>View in Figma</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="figma-icons-complete.md" class="btn btn-secondary" style="text-decoration: none;">
+                        Complete Icon List (287 icons)
+                    </a>
+                </div>
+                <p style="color: var(--neutral-600); margin-bottom: var(--space-6); font-size: var(--text-sm); background: var(--neutral-100); padding: var(--space-3); border-radius: var(--radius-md);">
+                    <strong>💡 Figma naming convention:</strong> icon-name/size (e.g., "home/24", "user/16")
+                    <br>
+                    <strong>📦 Implementation:</strong> Use <code style="background: var(--neutral-200); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 13px;">npm install feather-icons</code> or <code style="background: var(--neutral-200); padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 13px;">npm install react-feather</code>
+                </p>
+
+                <!-- Icon Sizes Reference -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Icon Sizes</h5>
+                    <div style="display: flex; gap: var(--space-6); align-items: flex-end; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div style="width: 16px; height: 16px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">16px (xs)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Inline text</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 20px; height: 20px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">20px (sm)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Buttons, inputs</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">24px (md)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Navigation</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 32px; height: 32px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">32px (lg)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Cards, headers</div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: var(--primary-500); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--neutral-600);">48px (xl)</div>
+                            <div style="font-family: var(--font-mono); font-size: 10px; color: var(--neutral-500);">Features, heroes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation & Actions -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Navigation & Actions</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">home</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">search</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">menu</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">close</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-left</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-right</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">arrow-down</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-left</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-right</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chevron-down</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User & Account -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">User & Account</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">users</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">user-plus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">login</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">logout</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content & Media -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Content & Media</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">image</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">video</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">audio</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">file</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">document</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">folder</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">camera</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">play</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">pause</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">volume</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communication -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Communication</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">mail</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">message</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">chat</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">phone</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">bell</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">notification</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actions & Status -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Actions & Status</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">plus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">minus</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">edit</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">delete</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">trash</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">save</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">download</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">upload</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">check</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">check-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">x-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">info</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">alert-circle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">alert-triangle</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">loading</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">refresh</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings & Tools -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Settings & Tools</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">settings</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">filter</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">calendar</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">clock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">map</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">location</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">lock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">unlock</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">eye</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">eye-off</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E-commerce & Business -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">E-commerce & Business</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">shopping-cart</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">shopping-bag</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">credit-card</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">dollar</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">tag</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">gift</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social & Sharing -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Social & Sharing</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">heart</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">star</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">share</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">bookmark</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">thumbs-up</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">thumbs-down</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Learning & Education -->
+                <div style="margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); color: var(--neutral-800);">Learning & Education</h5>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--space-4);">
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">book</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">book-open</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">award</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">trophy</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">target</div>
+                        </div>
+                        <div class="card" style="padding: var(--space-4); text-align: center;">
+                            <div style="width: 24px; height: 24px; background: var(--neutral-200); border-radius: var(--radius-sm); margin: 0 auto var(--space-2);"></div>
+                            <div style="font-size: var(--text-sm); color: var(--neutral-700);">clipboard</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Full Icon Library Note -->
+                <div style="background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%); padding: var(--space-6); border-radius: var(--radius-lg); border-left: 4px solid var(--primary-500); margin-bottom: var(--space-8);">
+                    <h5 style="font-size: var(--text-xl); font-weight: 600; margin-bottom: var(--space-3); color: var(--neutral-900);">
+                        📦 Complete Icon Library
+                    </h5>
+                    <p style="color: var(--neutral-700); margin-bottom: var(--space-4); line-height: 1.6;">
+                        The examples above show only a subset of available icons. The complete Worlex design system includes <strong>287 Feather Icons</strong> organized into 13 categories.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <div>
+                            <strong style="color: var(--neutral-900);">Navigation</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 8 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Arrows</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 31 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Media</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 19 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Files</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 13 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Communication</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 15 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Alerts</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 16 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">E-commerce</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 9 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Social</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 11 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Devices</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 9 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">Development</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 14 icons</span>
+                        </div>
+                        <div>
+                            <strong style="color: var(--neutral-900);">+3 more categories</strong>
+                            <span style="color: var(--neutral-600); font-size: var(--text-sm);"> - 142 icons</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                        <a href="https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System?node-id=5633-9328" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; background: var(--primary-500); color: white; padding: 10px 16px; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: var(--text-sm);">
+                            <span>Browse all 287 icons in Figma</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="figma-icons-complete.md" style="display: inline-flex; align-items: center; background: white; color: var(--primary-500); padding: 10px 16px; border-radius: var(--radius-md); text-decoration: none; font-weight: 600; font-size: var(--text-sm); border: 2px solid var(--primary-500);">
+                            View Complete List
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Tooltips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tooltips</h4>
+                <p style="color: var(--neutral-700); margin-bottom: var(--space-4); font-size: var(--text-sm);">
+                    Hover over elements to see tooltip examples
+                </p>
+                <div style="display: flex; gap: var(--space-6); flex-wrap: wrap; align-items: center; padding: var(--space-8);">
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn btn-primary" onmouseenter="showTooltip('tooltip-top')" onmouseleave="hideTooltip('tooltip-top')">
+                            Tooltip Top
+                        </button>
+                        <div id="tooltip-top" style="display: none; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 8px; background: var(--neutral-900); color: var(--neutral-50); padding: 6px 12px; border-radius: var(--radius-md); font-size: var(--text-sm); white-space: nowrap; box-shadow: var(--shadow-lg);">
+                            This is a tooltip
+                            <div style="position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: var(--neutral-900);"></div>
+                        </div>
+                    </div>
+                    <div style="position: relative; display: inline-block;">
+                        <button class="btn btn-secondary" onmouseenter="showTooltip('tooltip-right')" onmouseleave="hideTooltip('tooltip-right')">
+                            Tooltip Right
+                        </button>
+                        <div id="tooltip-right" style="display: none; position: absolute; left: 100%; top: 50%; transform: translateY(-50%); margin-left: 8px; background: var(--neutral-900); color: var(--neutral-50); padding: 6px 12px; border-radius: var(--radius-md); font-size: var(--text-sm); white-space: nowrap; box-shadow: var(--shadow-lg);">
+                            Helpful information
+                            <div style="position: absolute; right: 100%; top: 50%; transform: translateY(-50%); border: 4px solid transparent; border-right-color: var(--neutral-900);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tags & Chips -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tags & Chips</h4>
+                <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+                    <span style="display: inline-block; background: var(--primary-100); color: var(--primary-700); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Primary Tag</span>
+                    <span style="display: inline-block; background: var(--secondary-100); color: var(--secondary-700); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Secondary Tag</span>
+                    <span style="display: inline-block; background: var(--success-100); color: var(--success-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Success Tag</span>
+                    <span style="display: inline-block; background: var(--warning-100); color: var(--warning-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Warning Tag</span>
+                    <span style="display: inline-block; background: var(--error-100); color: var(--error-500); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">Error Tag</span>
+                    <span style="display: inline-flex; align-items: center; gap: 6px; background: var(--neutral-100); color: var(--neutral-800); padding: 4px 12px; border-radius: var(--radius-full); font-size: var(--text-sm); font-weight: 500;">
+                        <span>Removable</span>
+                        <button onclick="this.parentElement.remove()" style="background: none; border: none; padding: 0; cursor: pointer; color: var(--neutral-600); font-weight: bold; font-size: 16px;">×</button>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="mt-8">
+                <h4 class="mb-4">Tabs</h4>
+                <div style="border-bottom: 2px solid var(--neutral-200);">
+                    <div style="display: flex; gap: 0;">
+                        <button onclick="switchTab(0)" class="tab-button tab-active" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--primary-500); border-bottom: 2px solid var(--primary-500); margin-bottom: -2px; transition: all var(--transition-fast);">Overview</button>
+                        <button onclick="switchTab(1)" class="tab-button" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--neutral-600); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all var(--transition-fast);">Features</button>
+                        <button onclick="switchTab(2)" class="tab-button" style="padding: var(--space-3) var(--space-6); border: none; background: none; cursor: pointer; font-weight: 600; color: var(--neutral-600); border-bottom: 2px solid transparent; margin-bottom: -2px; transition: all var(--transition-fast);">Settings</button>
+                    </div>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: block;">
+                    <h5>Overview Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">This is the overview tab content. Tabs help organize content into separate views.</p>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: none;">
+                    <h5>Features Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">Here you can list all the amazing features of your product.</p>
+                </div>
+                <div class="tab-content" style="padding: var(--space-6); display: none;">
+                    <h5>Settings Content</h5>
+                    <p style="color: var(--neutral-700); margin-top: var(--space-2);">Configure your preferences and options here.</p>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-8">
+                <h4 class="mb-4">Pagination</h4>
+                <div style="display: flex; gap: var(--space-2); align-items: center;">
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">Previous</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--primary-500); background: var(--primary-500); border-radius: var(--radius-md); cursor: pointer; color: white; font-weight: 600;">1</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">2</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">3</button>
+                    <span style="color: var(--neutral-500);">...</span>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">10</button>
+                    <button style="padding: 8px 12px; border: 1px solid var(--neutral-300); background: var(--bg-white); border-radius: var(--radius-md); cursor: pointer; color: var(--neutral-700); font-weight: 500; transition: all var(--transition-fast);" onmouseover="this.style.background='var(--neutral-100)'" onmouseout="this.style.background='var(--bg-white)'">Next</button>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="mt-8">
+                <h4 class="mb-4">Notifications</h4>
+                <div style="display: grid; gap: var(--space-4); max-width: 500px;">
+                    <div style="padding: var(--space-4); background: var(--bg-white); border-left: 4px solid var(--success-400); border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: start; gap: var(--space-3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success-500)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 4px;">Success!</div>
+                            <div style="color: var(--neutral-700); font-size: var(--text-sm);">Your changes have been saved successfully.</div>
+                        </div>
+                    </div>
+                    <div style="padding: var(--space-4); background: var(--bg-white); border-left: 4px solid var(--error-400); border-radius: var(--radius-md); box-shadow: var(--shadow-md); display: flex; align-items: start; gap: var(--space-3);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--error-500)" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                        <div>
+                            <div style="font-weight: 600; color: var(--neutral-900); margin-bottom: 4px;">Error!</div>
+                            <div style="color: var(--neutral-700); font-size: var(--text-sm);">Something went wrong. Please try again.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="mt-8">
+                <h4 class="mb-4">Cards</h4>
+                <div class="component-grid">
+                    <div class="card">
+                        <div class="card-title">Design Tokens</div>
+                        <div class="card-content">Complete token system including colors, typography, spacing, and more.</div>
+                        <button class="btn btn-primary">Learn More</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Tailwind CSS</div>
+                        <div class="card-content">Fully integrated with Tailwind CSS for rapid development.</div>
+                        <button class="btn btn-secondary">View Docs</button>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">Figma Integration</div>
+                        <div class="card-content">Sync design tokens directly from Figma to your codebase.</div>
+                        <button class="btn btn-outline">Connect</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid & Layout Section -->
+    <section id="layout" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Grid & Layout</h2>
+                <p class="section-description">Flexible grid system and layout utilities</p>
+            </div>
+
+            <!-- Container Sizes -->
+            <div class="mt-8">
+                <h4 class="mb-4">Container Sizes</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 640px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">SM - 640px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 768px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">MD - 768px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 1024px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">LG - 1024px</div>
+                    </div>
+                    <div style="background: var(--primary-100); padding: var(--space-4); border-radius: var(--radius-md); border: 2px dashed var(--primary-300);">
+                        <div style="max-width: 1280px; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-family: var(--font-mono); font-size: var(--text-sm);">XL - 1280px (Default)</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid System -->
+            <div class="mt-8">
+                <h4 class="mb-4">12-Column Grid</h4>
+                <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-2);">
+                    <div style="grid-column: span 12; background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">12 columns</div>
+                    <div style="grid-column: span 6; background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">6 cols</div>
+                    <div style="grid-column: span 6; background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">6 cols</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 4; background: var(--neutral-600); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">4</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                    <div style="grid-column: span 3; background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base); text-align: center; font-size: var(--text-sm);">3</div>
+                </div>
+            </div>
+
+            <!-- Flexbox Layouts -->
+            <div class="mt-8">
+                <h4 class="mb-4">Flexbox Layouts</h4>
+                <div style="display: grid; gap: var(--space-6);">
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Space Between</div>
+                        <div style="display: flex; justify-content: space-between; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 1</div>
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 2</div>
+                            <div style="background: var(--primary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base); flex: 0 0 auto;">Item 3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Space Around</div>
+                        <div style="display: flex; justify-content: space-around; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md);">
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 1</div>
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 2</div>
+                            <div style="background: var(--secondary-500); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Item 3</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: var(--text-sm); color: var(--neutral-600); margin-bottom: var(--space-2);">Center Aligned</div>
+                        <div style="display: flex; justify-content: center; align-items: center; gap: var(--space-2); background: var(--neutral-100); padding: var(--space-4); border-radius: var(--radius-md); min-height: 100px;">
+                            <div style="background: var(--card-work); color: white; padding: var(--space-3); border-radius: var(--radius-base);">Centered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animations Section -->
+    <section id="animations" class="section" style="background-color: var(--neutral-100);">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Animations & Transitions</h2>
+                <p class="section-description">Motion and timing functions for interactive elements</p>
+            </div>
+
+            <!-- Transition Timing -->
+            <div class="mt-8">
+                <h4 class="mb-4">Transition Speeds</h4>
+                <div style="display: grid; gap: var(--space-4);">
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Fast (150ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--primary-500); transition: width 150ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Base (300ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--secondary-500); transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                    <div style="background: var(--neutral-50); padding: var(--space-4); border-radius: var(--radius-md);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                            <span style="font-family: var(--font-mono); font-size: var(--text-sm);">Slow (500ms)</span>
+                        </div>
+                        <div style="height: 4px; background: var(--neutral-200); border-radius: var(--radius-full); overflow: hidden;">
+                            <div class="progress-bar" style="width: 0%; height: 100%; background: var(--card-work); transition: width 500ms cubic-bezier(0.4, 0, 0.2, 1);"></div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="animateProgressBars()" style="margin-top: var(--space-4);" class="btn btn-primary">Animate Progress Bars</button>
+            </div>
+
+            <!-- Hover Effects -->
+            <div class="mt-8">
+                <h4 class="mb-4">Hover Effects</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4);">
+                    <div class="hover-scale" style="background: var(--primary-500); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: transform var(--transition-base);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Scale</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                    <div class="hover-lift" style="background: var(--secondary-500); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: all var(--transition-base); box-shadow: var(--shadow-md);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Lift</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                    <div class="hover-glow" style="background: var(--card-work); color: white; padding: var(--space-6); border-radius: var(--radius-lg); text-align: center; cursor: pointer; transition: all var(--transition-base);">
+                        <div style="font-weight: 600; margin-bottom: var(--space-2);">Glow</div>
+                        <div style="font-size: var(--text-sm); opacity: 0.9;">Hover me</div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .hover-scale:hover {
+                    transform: scale(1.05);
+                }
+                .hover-lift:hover {
+                    transform: translateY(-4px);
+                    box-shadow: var(--shadow-xl);
+                }
+                .hover-glow:hover {
+                    box-shadow: 0 0 20px rgba(38, 70, 83, 0.5);
+                }
+            </style>
+        </div>
+    </section>
+
+    <script>
+        function animateProgressBars() {
+            const bars = document.querySelectorAll('.progress-bar');
+            bars.forEach(bar => {
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = '100%';
+                }, 50);
+            });
+            setTimeout(() => {
+                bars.forEach(bar => {
+                    bar.style.width = '0%';
+                });
+            }, 2000);
+        }
+    </script>
+
+    <!-- Getting Started Section -->
+    <section id="getting-started" class="section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Getting Started</h2>
+                <p class="section-description">Start using the Worlex Design System in your project</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card mt-8">
+                    <h3>Installation</h3>
+                    <p>Clone the repository and install dependencies:</p>
+                    <code style="display: block; padding: var(--space-4); background: var(--neutral-900); color: var(--neutral-100); border-radius: var(--radius-md); margin: var(--space-4) 0;">
+                        git clone https://github.com/safronovsergeisafronov-bot/design-system.git<br>
+                        cd design-system<br>
+                        npm install
+                    </code>
+                </div>
+
+                <div class="card mt-8">
+                    <h3>Development</h3>
+                    <p>Run the development server:</p>
+                    <code style="display: block; padding: var(--space-4); background: var(--neutral-900); color: var(--neutral-100); border-radius: var(--radius-md); margin: var(--space-4) 0;">
+                        npm run dev
+                    </code>
+                    <p style="margin-top: var(--space-4);">Open <a href="http://localhost:3000">http://localhost:3000</a> to view the full Next.js application with interactive styleguide.</p>
+                </div>
+
+                <div class="card mt-8">
+                    <h3>Using Design Tokens</h3>
+                    <p>Import and use design tokens in your components:</p>
+                    <code style="display: block; padding: var(--space-4); background: var(--neutral-900); color: var(--neutral-100); border-radius: var(--radius-md); margin: var(--space-4) 0; white-space: pre-wrap;">
+import { designTokens } from '@/styles/design-tokens';
+
+// Use in styles
+const button = {
+  backgroundColor: designTokens.colors.primary[500],
+  borderRadius: designTokens.borderRadius.lg,
+};
+
+// Or use Tailwind classes
+&lt;button className="bg-primary-500 rounded-lg"&gt;
+  Click me
+&lt;/button&gt;
+                    </code>
+                </div>
+
+                <div class="card mt-8">
+                    <h3>Figma Integration</h3>
+                    <p>Design tokens are extracted from the Figma design system:</p>
+                    <a href="https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System" target="_blank" class="btn btn-secondary" style="margin-top: var(--space-4);">Open in Figma</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Worlex Design System</h4>
+                    <p>A comprehensive design system built with Next.js and Tailwind CSS.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/safronovsergeisafronov-bot/design-system" target="_blank">GitHub Repository</a></li>
+                        <li><a href="https://www.figma.com/design/xUUnKPGTxf3gH4KdqveDd4/Worlex---Simple-Design-System" target="_blank">Figma Design File</a></li>
+                        <li><a href="#getting-started">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Design System</h4>
+                    <ul class="footer-links">
+                        <li><a href="#colors">Colors</a></li>
+                        <li><a href="#typography">Typography</a></li>
+                        <li><a href="#spacing">Spacing & Layout</a></li>
+                        <li><a href="#icons">Icons (287)</a></li>
+                        <li><a href="figma-icons-complete.md">Complete Icon List</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Components</h4>
+                    <ul class="footer-links">
+                        <li><a href="#components">Buttons & Forms</a></li>
+                        <li><a href="#components">Badges & Alerts</a></li>
+                        <li><a href="#components">Tooltips & Tags</a></li>
+                        <li><a href="#components">Tabs & Pagination</a></li>
+                        <li><a href="#components">Notifications</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Worlex Design System. MIT License.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle Functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Update button
+            updateThemeButton(newTheme);
+        }
+
+        function updateThemeButton(theme) {
+            const sunIcon = document.getElementById('theme-icon-sun');
+            const moonIcon = document.getElementById('theme-icon-moon');
+            const themeText = document.getElementById('theme-text');
+
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+                themeText.textContent = 'Light';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+                themeText.textContent = 'Dark';
+            }
+        }
+
+        // Initialize theme on page load
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme === 'dark' || (savedTheme === null && prefersDark) ? 'dark' : 'light';
+
+            document.documentElement.setAttribute('data-theme', theme);
+            updateThemeButton(theme);
+        })();
+
+        // Tooltip functionality
+        function showTooltip(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function hideTooltip(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+
+        // Tabs functionality
+        function switchTab(index) {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.style.color = 'var(--primary-500)';
+                    btn.style.borderBottomColor = 'var(--primary-500)';
+                    btn.classList.add('tab-active');
+                } else {
+                    btn.style.color = 'var(--neutral-600)';
+                    btn.style.borderBottomColor = 'transparent';
+                    btn.classList.remove('tab-active');
+                }
+            });
+
+            tabContents.forEach((content, i) => {
+                content.style.display = i === index ? 'block' : 'none';
+            });
+        }
+
+        // Copy to clipboard functionality
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Create temporary notification
+                const notification = document.createElement('div');
+                notification.textContent = `Copied ${text}`;
+                notification.style.cssText = `
+                    position: fixed;
+                    bottom: 2rem;
+                    right: 2rem;
+                    background: var(--neutral-900);
+                    color: white;
+                    padding: 1rem 1.5rem;
+                    border-radius: var(--radius-lg);
+                    box-shadow: var(--shadow-xl);
+                    z-index: 1000;
+                    animation: slideIn 0.3s ease;
+                `;
+                document.body.appendChild(notification);
+
+                setTimeout(() => {
+                    notification.style.animation = 'slideOut 0.3s ease';
+                    setTimeout(() => notification.remove(), 300);
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+
+        // Add slide animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
