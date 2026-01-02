@@ -17,6 +17,8 @@ const config: Config = {
         warning: designTokens.colors.semantic.warning,
         error: designTokens.colors.semantic.error,
         info: designTokens.colors.semantic.info,
+        background: designTokens.colors.background,
+        cards: designTokens.colors.cards,
       },
       fontFamily: {
         sans: designTokens.typography.fontFamily.sans,

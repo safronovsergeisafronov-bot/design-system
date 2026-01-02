@@ -108,6 +108,27 @@ export const colors = {
     },
   },
 
+  // Background Colors
+  background: {
+    paper: '#FDFBF4',  // Warm off-white, paper background
+    white: '#FFFFFF',  // Pure white for icons and contrast elements
+  },
+
+  // Card Colors - Categorical palette for different card types
+  cards: {
+    cafe: '#B85C38',        // Warm terracotta-orange (Café/Restaurant)
+    dating: '#E6B0AA',      // Dusty pink (Dating)
+    work: '#264653',        // Dark teal (Work) - anchor color
+    weather: '#E0B043',     // Mustard yellow (Weather/Time)
+    travel: '#5C7C5B',      // Muted sage green (Travel)
+    etiquette: '#7A9E7E',   // Soft green, calm (Etiquette)
+    lifestyle: '#E9C46A',   // Light yellow, domestic (Lifestyle)
+    health: '#5B7C8C',      // Cool gray-blue (Health)
+    entertainment: '#C85C5C', // Muted red (Entertainment)
+    cta: '#801C1E',         // Dark burgundy/wine (Accent CTA card)
+    chipOverlay: 'rgba(255, 255, 255, 0.25)', // Light overlay for chips/list items
+  },
+
   // Special Colors
   white: '#ffffff',
   black: '#000000',
@@ -253,7 +274,8 @@ export const shadows = {
 // ============================================================================
 
 export const breakpoints = {
-  sm: '640px',
+  xs: '320px',
+  sm: '480px',
   md: '768px',
   lg: '1024px',
   xl: '1280px',
